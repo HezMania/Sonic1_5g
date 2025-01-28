@@ -1,4 +1,4 @@
-This is a personal fork from SonicWorldsNext. Please see below for the vanilla version of SonicWorldsNext.
+This is a personal fork from SonicWorldsNext. Please see below for the vanilla version of SonicWorldsNext. I did not add it to the main SonicWorldsNext as I felt it strayed too far from it and did not want to confuse anyone.
 
 Included are direct conversions of Sonic 2 levels into this framework. No credit is needed, but greatly appreciated.
 
