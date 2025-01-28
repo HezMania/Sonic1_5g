@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://cshmda7f5pdtn"]
+
+[ext_resource type="Script" path="res://Scene/Testobjectimport.gd" id="1_0tei4"]
+[ext_resource type="PackedScene" uid="uid://bct374kjctkxr" path="res://Entities/Items/Checkpoint.tscn" id="2_4hn7m"]
+[ext_resource type="Texture2D" uid="uid://dmk4c6snutoka" path="res://TemporaryGraphics/EHZobjectsact1.png" id="6_3jgcr"]
+
+[node name="Testobjectimport" type="Node2D"]
+script = ExtResource("1_0tei4")
+
+[node name="RINGS" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="MONITORS" type="Node2D" parent="."]
+
+[node name="SPRINGS" type="Node2D" parent="."]
+
+[node name="SPIKES" type="Node2D" parent="."]
+
+[node name="PATHSWAPPERS" type="Node2D" parent="."]
+
+[node name="MOVINGPLATFORMS" type="Node2D" parent="."]
+
+[node name="@Area2D@52174" parent="MOVINGPLATFORMS" instance=ExtResource("2_4hn7m")]
+position = Vector2(10.1561, 10.3122)
+
+[node name="STARPOSTS" type="Node2D" parent="."]
+
+[node name="@Area2D@52558" parent="STARPOSTS" instance=ExtResource("2_4hn7m")]
+position = Vector2(7744, 1352)
+
+[node name="Checkpoint" parent="STARPOSTS" instance=ExtResource("2_4hn7m")]
+position = Vector2(3664, 1864)
+
+[node name="@Area2D@55948" parent="STARPOSTS" instance=ExtResource("2_4hn7m")]
+position = Vector2(4928, 1224)
+
+[node name="@Area2D@55949" parent="STARPOSTS" instance=ExtResource("2_4hn7m")]
+position = Vector2(6080, 1480)
+
+[node name="@Area2D@55950" parent="STARPOSTS" instance=ExtResource("2_4hn7m")]
+position = Vector2(6848, 1000)
+
+[node name="TempCollisionMap" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.172549)
+texture = ExtResource("6_3jgcr")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="LevelObjects" type="Node2D" parent="."]
+
+[node name="Rings" type="Node2D" parent="LevelObjects"]
+
+[node name="Monitors" type="Node2D" parent="LevelObjects"]
+
+[node name="Spikes" type="Node2D" parent="LevelObjects"]
+
+[node name="Springs" type="Node2D" parent="LevelObjects"]

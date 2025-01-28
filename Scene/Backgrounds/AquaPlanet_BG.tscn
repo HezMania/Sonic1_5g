@@ -1,0 +1,341 @@
+[gd_scene load_steps=4 format=3 uid="uid://cs01vxi2tnl2m"]
+
+[ext_resource type="Material" uid="uid://djvo6uvqftvcj" path="res://Shaders/DustHillBackground.tres" id="1_iahpq"]
+[ext_resource type="Texture2D" uid="uid://dsnfw0hppf7ki" path="res://Graphics/Backgrounds/AquaPlanet.png" id="2_b44yy"]
+[ext_resource type="Material" uid="uid://cc17ekf8cc15u" path="res://Shaders/LevelSpecific_Materials/CNZ_BGripple.tres" id="3_v1cd6"]
+
+[node name="AquaPlanet" type="Node2D"]
+position = Vector2(0, 48)
+
+[node name="BackgroundLayer" type="Node2D" parent="."]
+material = ExtResource("1_iahpq")
+
+[node name="Parallax2D_01" type="Parallax2D" parent="BackgroundLayer"]
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="BackgroundLayer/Parallax2D_01"]
+position = Vector2(0, -48)
+texture = ExtResource("2_b44yy")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 512, 12)
+
+[node name="Parallax2D_02" type="Parallax2D" parent="BackgroundLayer"]
+scroll_scale = Vector2(0.15, 0.2)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="BackgroundLayer/Parallax2D_02"]
+position = Vector2(0, -36)
+texture = ExtResource("2_b44yy")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 12, 512, 12)
+
+[node name="Parallax2D_03" type="Parallax2D" parent="BackgroundLayer"]
+scroll_scale = Vector2(0.1, 0.2)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="BackgroundLayer/Parallax2D_03"]
+position = Vector2(0, -24)
+texture = ExtResource("2_b44yy")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 24, 512, 18)
+
+[node name="Parallax2D_04" type="Parallax2D" parent="BackgroundLayer"]
+scroll_scale = Vector2(0, 0.2)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="BackgroundLayer/Parallax2D_04"]
+material = ExtResource("3_v1cd6")
+position = Vector2(0, 42)
+texture = ExtResource("2_b44yy")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 42, 512, 22)
+
+[node name="Parallax2D_05" type="Parallax2D" parent="BackgroundLayer"]
+scroll_scale = Vector2(0.09, 0.2)
+repeat_size = Vector2(512, 0)
+autoscroll = Vector2(8, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="BackgroundLayer/Parallax2D_05"]
+position = Vector2(0, 64)
+texture = ExtResource("2_b44yy")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 64, 512, 16)
+
+[node name="BackgroundPar_02" type="Sprite2D" parent="BackgroundLayer/Parallax2D_05"]
+position = Vector2(0, 26)
+texture = ExtResource("2_b44yy")
+centered = false
+flip_h = true
+flip_v = true
+region_enabled = true
+region_rect = Rect2(0, 64, 512, 16)
+
+[node name="Parallax2D_06" type="Parallax2D" parent="BackgroundLayer"]
+scroll_scale = Vector2(0.1, 0.2)
+repeat_size = Vector2(512, 0)
+autoscroll = Vector2(6, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="BackgroundLayer/Parallax2D_06"]
+position = Vector2(0, 80)
+texture = ExtResource("2_b44yy")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 80, 512, 16)
+
+[node name="BackgroundPar_02" type="Sprite2D" parent="BackgroundLayer/Parallax2D_06"]
+position = Vector2(0, 10)
+texture = ExtResource("2_b44yy")
+centered = false
+flip_h = true
+flip_v = true
+region_enabled = true
+region_rect = Rect2(0, 80, 512, 16)
+
+[node name="Parallax2D_07" type="Parallax2D" parent="BackgroundLayer"]
+scroll_scale = Vector2(0.09, 0.2)
+repeat_size = Vector2(512, 0)
+autoscroll = Vector2(4, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="BackgroundLayer/Parallax2D_07"]
+position = Vector2(0, 96)
+texture = ExtResource("2_b44yy")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 96, 512, 16)
+
+[node name="Parallax2D_08" type="Parallax2D" parent="BackgroundLayer"]
+scroll_scale = Vector2(0.07, 0.2)
+repeat_size = Vector2(512, 0)
+autoscroll = Vector2(2, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="BackgroundLayer/Parallax2D_08"]
+position = Vector2(0, 112)
+texture = ExtResource("2_b44yy")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 112, 512, 16)
+
+[node name="BackgroundPar_02" type="Sprite2D" parent="BackgroundLayer/Parallax2D_08"]
+position = Vector2(0, -6)
+texture = ExtResource("2_b44yy")
+centered = false
+flip_h = true
+flip_v = true
+region_enabled = true
+region_rect = Rect2(0, 112, 512, 16)
+
+[node name="StarSection" type="Node2D" parent="BackgroundLayer"]
+
+[node name="Parallax2D_09" type="Parallax2D" parent="BackgroundLayer/StarSection"]
+scroll_scale = Vector2(0.05, 0.2)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="BackgroundLayer/StarSection/Parallax2D_09"]
+position = Vector2(0, 128)
+texture = ExtResource("2_b44yy")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 128, 512, 8)
+
+[node name="Parallax2D_10" type="Parallax2D" parent="BackgroundLayer/StarSection"]
+scroll_scale = Vector2(0.05, 0.2)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="BackgroundLayer/StarSection/Parallax2D_10"]
+position = Vector2(0, 136)
+texture = ExtResource("2_b44yy")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 136, 512, 8)
+
+[node name="Parallax2D_11" type="Parallax2D" parent="BackgroundLayer/StarSection"]
+scroll_scale = Vector2(0.05, 0.2)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="BackgroundLayer/StarSection/Parallax2D_11"]
+position = Vector2(0, 144)
+texture = ExtResource("2_b44yy")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 144, 512, 8)
+
+[node name="Parallax2D_12" type="Parallax2D" parent="BackgroundLayer/StarSection"]
+scroll_scale = Vector2(0.05, 0.2)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="BackgroundLayer/StarSection/Parallax2D_12"]
+position = Vector2(0, 152)
+texture = ExtResource("2_b44yy")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 152, 512, 8)
+
+[node name="Parallax2D_13" type="Parallax2D" parent="BackgroundLayer/StarSection"]
+scroll_scale = Vector2(0.05, 0.2)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="BackgroundLayer/StarSection/Parallax2D_13"]
+position = Vector2(0, 160)
+texture = ExtResource("2_b44yy")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 160, 512, 8)
+
+[node name="Parallax2D_14" type="Parallax2D" parent="BackgroundLayer/StarSection"]
+scroll_scale = Vector2(0.05, 0.2)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="BackgroundLayer/StarSection/Parallax2D_14"]
+position = Vector2(0, 168)
+texture = ExtResource("2_b44yy")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 168, 512, 8)
+
+[node name="Parallax2D_15" type="Parallax2D" parent="BackgroundLayer/StarSection"]
+scroll_scale = Vector2(0.05, 0.2)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="BackgroundLayer/StarSection/Parallax2D_15"]
+position = Vector2(0, 176)
+texture = ExtResource("2_b44yy")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 176, 512, 8)
+
+[node name="Parallax2D_16" type="Parallax2D" parent="BackgroundLayer/StarSection"]
+scroll_scale = Vector2(0.05, 0.2)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="BackgroundLayer/StarSection/Parallax2D_16"]
+position = Vector2(0, 184)
+texture = ExtResource("2_b44yy")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 184, 512, 8)
+
+[node name="Parallax2D_17" type="Parallax2D" parent="BackgroundLayer/StarSection"]
+scroll_scale = Vector2(0.05, 0.2)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="BackgroundLayer/StarSection/Parallax2D_17"]
+position = Vector2(0, 192)
+texture = ExtResource("2_b44yy")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 192, 512, 8)
+
+[node name="Parallax2D_18" type="Parallax2D" parent="BackgroundLayer/StarSection"]
+scroll_scale = Vector2(0.05, 0.2)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="BackgroundLayer/StarSection/Parallax2D_18"]
+position = Vector2(0, 200)
+texture = ExtResource("2_b44yy")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 200, 512, 8)
+
+[node name="Parallax2D_19" type="Parallax2D" parent="BackgroundLayer/StarSection"]
+scroll_scale = Vector2(0.05, 0.2)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="BackgroundLayer/StarSection/Parallax2D_19"]
+position = Vector2(0, 208)
+texture = ExtResource("2_b44yy")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 208, 512, 8)
+
+[node name="Parallax2D_20" type="Parallax2D" parent="BackgroundLayer/StarSection"]
+scroll_scale = Vector2(0.05, 0.2)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="BackgroundLayer/StarSection/Parallax2D_20"]
+position = Vector2(0, 216)
+texture = ExtResource("2_b44yy")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 216, 512, 8)
+
+[node name="Parallax2D_21" type="Parallax2D" parent="BackgroundLayer"]
+scroll_scale = Vector2(0.15, 0.2)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="BackgroundLayer/Parallax2D_21"]
+position = Vector2(0, 224)
+texture = ExtResource("2_b44yy")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 224, 512, 12)
+
+[node name="Parallax2D_22" type="Parallax2D" parent="BackgroundLayer"]
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="BackgroundLayer/Parallax2D_22"]
+position = Vector2(0, 236)
+texture = ExtResource("2_b44yy")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 236, 512, 24)
+
+[node name="Parallax2D_23" type="Parallax2D" parent="BackgroundLayer"]
+scroll_scale = Vector2(0.3, 0.2)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="BackgroundLayer/Parallax2D_23"]
+position = Vector2(0, 260)
+texture = ExtResource("2_b44yy")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 260, 512, 12)
+
+[node name="Parallax2D_24" type="Parallax2D" parent="BackgroundLayer"]
+scroll_scale = Vector2(0.4, 0.2)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="BackgroundLayer/Parallax2D_24"]
+position = Vector2(0, 272)
+texture = ExtResource("2_b44yy")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 272, 512, 151)
+
+[node name="BackgroundPar_02" type="Sprite2D" parent="BackgroundLayer/Parallax2D_24"]
+position = Vector2(1, 423)
+texture = ExtResource("2_b44yy")
+centered = false
+flip_h = true
+region_enabled = true
+region_rect = Rect2(0, 272, 512, 151)

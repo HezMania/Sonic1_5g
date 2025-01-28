@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://c16fknpgg7eyf"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/Squider.gd" id="1_npe83"]
+[ext_resource type="Texture2D" uid="uid://c8ur74dp3mrxy" path="res://Graphics/Enemies/inker.png" id="2_xn73d"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(16, 27)
+
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(28, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1rikh"]
+atlas = ExtResource("2_xn73d")
+region = Rect2(0, 0, 48, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8kj6d"]
+atlas = ExtResource("2_xn73d")
+region = Rect2(48, 0, 48, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3luhw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1rikh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8kj6d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Squider" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 16384
+collision_mask = 15
+script = ExtResource("1_npe83")
+
+[node name="CollissionMask" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2.5)
+shape = SubResource("1")
+
+[node name="DamageArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 528384
+
+[node name="HitBox" type="CollisionShape2D" parent="DamageArea"]
+modulate = Color(1, 0, 0, 1)
+shape = SubResource("2")
+
+[node name="Squider" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3luhw")
+autoplay = "default"
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+z_index = -100
+position = Vector2(-1.90735e-06, -1.90735e-06)
+scale = Vector2(3.2, 3.2)
+
+[node name="FloorCheck" type="RayCast2D" parent="."]
+position = Vector2(-8, 14)
+target_position = Vector2(0, 14)
+
+[connection signal="area_entered" from="DamageArea" to="." method="_on_DamageArea_area_entered"]
+[connection signal="body_entered" from="DamageArea" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="DamageArea" to="." method="_on_body_exited"]

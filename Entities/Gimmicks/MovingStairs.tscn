@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://2kn4wdrih6v5"]
+
+[ext_resource type="Script" path="res://Scripts/Gimmicks/MovingStairs.gd" id="1_1mvy6"]
+[ext_resource type="Texture2D" uid="uid://b7fiakcwbo2rt" path="res://Graphics/Obstacles/Blocks/moving_block_2.png" id="2_g4tf7"]
+[ext_resource type="PackedScene" uid="uid://rm55j566ja8p" path="res://Entities/Obstacles/Block.tscn" id="2_y5b6u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tlehs"]
+size = Vector2(32, 21)
+
+[node name="MovingStairs" type="Node2D"]
+script = ExtResource("1_1mvy6")
+Vertical_Direction = 1
+
+[node name="Block" parent="." instance=ExtResource("2_y5b6u")]
+
+[node name="Block_Editor" type="Sprite2D" parent="."]
+texture = ExtResource("2_g4tf7")
+
+[node name="PlayerCheck" type="Area2D" parent="."]
+position = Vector2(48, -16)
+scale = Vector2(4, 1)
+collision_layer = 0
+collision_mask = 4096
+
+[node name="mask" type="CollisionShape2D" parent="PlayerCheck"]
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_tlehs")
+
+[connection signal="body_entered" from="PlayerCheck" to="." method="_on_player_check_body_entered"]
+[connection signal="body_exited" from="PlayerCheck" to="." method="_on_player_check_body_exited"]
+[connection signal="body_shape_entered" from="PlayerCheck" to="." method="_on_player_check_body_shape_entered"]

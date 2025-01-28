@@ -1,0 +1,222 @@
+[gd_scene load_steps=14 format=3 uid="uid://6b6rr2qi5smj"]
+
+[ext_resource type="Script" path="res://Scripts/Gimmicks/WoodSprong.gd" id="1_tvb54"]
+[ext_resource type="Texture2D" uid="uid://b0bhimvr5x0p6" path="res://Graphics/Gimmicks/WoodSprong.png" id="2_ociu0"]
+[ext_resource type="Texture2D" uid="uid://c7218f78hwl8o" path="res://Graphics/Gimmicks/springs_yellow.png" id="2_ua6xp"]
+
+[sub_resource type="Animation" id="3"]
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spring:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Rect2(64, 16, 16, 32), Rect2(96, 16, 32, 32), Rect2(80, 16, 16, 32)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spring:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(8, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="4"]
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spring:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 32, 32, 16), Rect2(32, 16, 32, 32), Rect2(0, 16, 32, 16)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spring:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(0, -8), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="5"]
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spring:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Rect2(272, 16, 32, 32), Rect2(304, 0, 48, 48), Rect2(240, 16, 32, 32)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spring:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(-8, -8), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="6"]
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Spring:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Rect2(160, 16, 32, 32), Rect2(192, 0, 48, 48), Rect2(128, 16, 32, 32)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Spring:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(8, -8), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3avuf"]
+_data = {
+"SpringRight": SubResource("3"),
+"SpringUp": SubResource("4"),
+"SpringUpLeft": SubResource("5"),
+"SpringUpRight": SubResource("6")
+}
+
+[sub_resource type="Animation" id="Animation_2cvob"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WoodSprong:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_gpafp"]
+resource_name = "Springing"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WoodSprong:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0159235, 0.0333333, 0.0489046, 0.0666667, 0.0804364, 0.0972763, 0.114344, 0.132617, 0.148781, 0.166667, 0.182115, 0.2, 0.216471, 0.242966, 0.266667, 0.290992, 0.317034, 0.336745, 0.36008, 0.383835, 0.41584, 0.451219, 0.480896, 0.533333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 0]
+}
+
+[sub_resource type="Animation" id="Animation_dl7t8"]
+resource_name = "StillSpring"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WoodSprong:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kd316"]
+_data = {
+"RESET": SubResource("Animation_2cvob"),
+"Springing": SubResource("Animation_gpafp"),
+"StillSpring": SubResource("Animation_dl7t8")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fbk8f"]
+size = Vector2(9.6, 1.4)
+
+[node name="WoodSprong" type="StaticBody2D"]
+collision_layer = 8192
+collision_mask = 8192
+script = ExtResource("1_tvb54")
+springScrewAnimation = null
+flipped = null
+
+[node name="Spring" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_ua6xp")
+region_enabled = true
+region_rect = Rect2(0, 32, 32, 16)
+
+[node name="WoodSprong" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
+texture = ExtResource("2_ociu0")
+hframes = 12
+
+[node name="SpringAnimator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3avuf")
+}
+
+[node name="WoodSprongAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kd316")
+}
+autoplay = "StillSpring"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4096
+collision_mask = 4096
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2(7.15256e-07, -2.5)
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_fbk8f")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

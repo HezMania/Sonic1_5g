@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlduomj43ceds"]
+
+[ext_resource type="Texture2D" uid="uid://1yj5hyre12x5" path="res://Graphics/Hazards/GCZTurret.png" id="1_0sf1g"]
+
+[node name="GczTurret" type="Node2D"]
+
+[node name="TurretMainBody" type="Sprite2D" parent="."]
+texture = ExtResource("1_0sf1g")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="Turret" type="Sprite2D" parent="."]
+position = Vector2(0, 20)
+texture = ExtResource("1_0sf1g")
+region_enabled = true
+region_rect = Rect2(64, 32, 16, 32)

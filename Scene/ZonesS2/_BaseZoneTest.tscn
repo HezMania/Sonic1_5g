@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://beru7qd12wwla"]
+
+[ext_resource type="Script" path="res://Scripts/Level/Level.gd" id="1_ailn1"]
+[ext_resource type="PackedScene" uid="uid://c30uceea18q1w" path="res://Entities/Misc/HUD.tscn" id="3_6tvqd"]
+[ext_resource type="PackedScene" uid="uid://cioq5saowvqxj" path="res://Entities/MainObjects/Player.tscn" id="5_ebpdl"]
+[ext_resource type="PackedScene" uid="uid://dggjdwwkl527b" path="res://Entities/Items/Ring.tscn" id="49_is2db"]
+
+[node name="BaseZone" type="Node2D"]
+script = ExtResource("1_ailn1")
+defaultLeftBoundry = 0
+defaultTopBoundry = 0
+defaultBottomBoundry = 2048
+
+[node name="HUD" parent="." instance=ExtResource("3_6tvqd")]
+
+[node name="Player" parent="." instance=ExtResource("5_ebpdl")]
+position = Vector2(83, 748)
+
+[node name="LevelLayoutData" type="Node2D" parent="."]
+
+[node name="Rings" type="Node2D" parent="."]
+
+[node name="Ring" parent="Rings" instance=ExtResource("49_is2db")]
+position = Vector2(83, 791)

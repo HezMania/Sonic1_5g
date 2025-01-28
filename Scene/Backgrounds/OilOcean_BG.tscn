@@ -1,0 +1,151 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfirj0i3eks62"]
+
+[ext_resource type="Texture2D" uid="uid://bxgrd4mov6cx1" path="res://Graphics/Backgrounds/OilOcean.png" id="1_gx1nt"]
+[ext_resource type="Material" uid="uid://cc17ekf8cc15u" path="res://Shaders/LevelSpecific_Materials/CNZ_BGripple.tres" id="2_yxbds"]
+
+[node name="OilOceanBg" type="Node2D"]
+
+[node name="Parallax2D_01" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.25, 0.16)
+repeat_size = Vector2(768, 0)
+repeat_times = 26
+metadata/_edit_lock_ = true
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Parallax2D_01"]
+texture = ExtResource("1_gx1nt")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 768, 160)
+metadata/_edit_lock_ = true
+
+[node name="Parallax2D_02" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.25, 0.16)
+repeat_size = Vector2(768, 0)
+repeat_times = 26
+metadata/_edit_lock_ = true
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Parallax2D_02"]
+position = Vector2(0, 160)
+texture = ExtResource("1_gx1nt")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 160, 768, 8)
+
+[node name="Parallax2D_03" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.25, 0.16)
+repeat_size = Vector2(768, 0)
+repeat_times = 26
+metadata/_edit_lock_ = true
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Parallax2D_03"]
+position = Vector2(0, 168)
+texture = ExtResource("1_gx1nt")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 168, 768, 8)
+
+[node name="Parallax2D_04" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.25, 0.16)
+repeat_size = Vector2(768, 0)
+repeat_times = 26
+metadata/_edit_lock_ = true
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Parallax2D_04"]
+position = Vector2(0, 176)
+texture = ExtResource("1_gx1nt")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 176, 768, 8)
+
+[node name="Parallax2D_05" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.25, 0.16)
+repeat_size = Vector2(768, 0)
+repeat_times = 26
+metadata/_edit_lock_ = true
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Parallax2D_05"]
+position = Vector2(0, 184)
+texture = ExtResource("1_gx1nt")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 184, 768, 8)
+
+[node name="Parallax2D_XX" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0, 0.16)
+repeat_size = Vector2(768, 0)
+repeat_times = 26
+metadata/_edit_lock_ = true
+
+[node name="BackgroundPar_02" type="Sprite2D" parent="Parallax2D_XX"]
+material = ExtResource("2_yxbds")
+position = Vector2(0, 192)
+texture = ExtResource("1_gx1nt")
+centered = false
+offset = Vector2(128, 0)
+region_enabled = true
+region_rect = Rect2(0, 192, 768, 32)
+
+[node name="Parallax2D_06" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.25, 0.16)
+repeat_size = Vector2(768, 0)
+repeat_times = 26
+metadata/_edit_lock_ = true
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Parallax2D_06"]
+position = Vector2(0, 224)
+texture = ExtResource("1_gx1nt")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 224, 768, 8)
+
+[node name="Parallax2D_07" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.25, 0.16)
+repeat_size = Vector2(768, 0)
+repeat_times = 26
+metadata/_edit_lock_ = true
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Parallax2D_07"]
+position = Vector2(0, 232)
+texture = ExtResource("1_gx1nt")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 232, 768, 8)
+
+[node name="Parallax2D_08" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.25, 0.16)
+repeat_size = Vector2(768, 0)
+repeat_times = 26
+metadata/_edit_lock_ = true
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Parallax2D_08"]
+position = Vector2(0, 240)
+texture = ExtResource("1_gx1nt")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 240, 768, 8)
+
+[node name="Parallax2D_09" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.25, 0.16)
+repeat_size = Vector2(768, 0)
+repeat_times = 26
+metadata/_edit_lock_ = true
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Parallax2D_09"]
+position = Vector2(0, 248)
+texture = ExtResource("1_gx1nt")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 248, 768, 8)
+
+[node name="Parallax2D_10" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.25, 0.16)
+repeat_size = Vector2(768, 0)
+repeat_times = 26
+metadata/_edit_lock_ = true
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Parallax2D_10"]
+position = Vector2(0, 256)
+texture = ExtResource("1_gx1nt")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 256, 768, 256)

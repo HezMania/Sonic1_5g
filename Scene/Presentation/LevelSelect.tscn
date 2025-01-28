@@ -1,0 +1,1385 @@
+[gd_scene load_steps=16 format=3 uid="uid://bc7ita62c8bgd"]
+
+[ext_resource type="Script" path="res://Scripts/Level/LevelSelect.gd" id="1_76g2x"]
+[ext_resource type="Texture2D" uid="uid://esjvugc2sc1s" path="res://Graphics/Misc/LevelSelectBG.png" id="3_2p68e"]
+[ext_resource type="Texture2D" uid="uid://4lhg0ovh1pe8" path="res://Graphics/Players/Sonic.png" id="3_xx7nf"]
+[ext_resource type="Texture2D" uid="uid://dode67pio1rgl" path="res://Graphics/Misc/LevelSelectBGSonicandTails.png" id="4_263h6"]
+[ext_resource type="Texture2D" uid="uid://c05fsbnx0p7xf" path="res://Graphics/Players/Tails.png" id="4_a6eax"]
+[ext_resource type="Texture2D" uid="uid://cndrds5482vh5" path="res://Graphics/Players/Knuckles.png" id="5_b78hv"]
+[ext_resource type="Texture2D" uid="uid://clkrgrg4oxxft" path="res://Graphics/Misc/Sonic2OptionsBG.png" id="5_qvw7n"]
+[ext_resource type="Texture2D" uid="uid://bfesqgvh63scg" path="res://Graphics/Players/Amy.png" id="6_p26tf"]
+[ext_resource type="FontFile" uid="uid://ml62eqfe7avn" path="res://Graphics/Fonts/small_font.png" id="7_ymc11"]
+[ext_resource type="Texture2D" uid="uid://dhygmoxun35w1" path="res://Graphics/Fonts/arrows_small_font.png" id="8_efgui"]
+[ext_resource type="AudioStream" uid="uid://dh4rsaka62ph4" path="res://Audio/SFX/Gimmicks/Switch.wav" id="9_x3tof"]
+[ext_resource type="Texture2D" uid="uid://cyhnjwx3fhpw2" path="res://Graphics/HUD/LevelCards/Sonic2/levelselecticons.png" id="11_00fx4"]
+
+[sub_resource type="Animation" id="1"]
+resource_name = "Animate"
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sonic:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(731, 9, 24, 39), Rect2(683, 9, 24, 39), Rect2(731, 9, 24, 39), Rect2(683, 9, 24, 39)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Tails/TailsTails:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(488, 25, 16, 22), Rect2(534, 26, 19, 21), Rect2(580, 30, 20, 18), Rect2(628, 32, 20, 16), Rect2(677, 28, 19, 20), Rect2(488, 25, 16, 22), Rect2(534, 26, 19, 21), Rect2(580, 30, 20, 18), Rect2(628, 32, 20, 16), Rect2(677, 28, 19, 20)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Knuckles:region_rect")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Rect2(402, 468, 38, 36)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Tails:region_rect")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Rect2(672, 200, 40, 40), Rect2(720, 200, 40, 40)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Amy:region_rect")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(488, 8, 32, 40), Rect2(536, 8, 32, 40), Rect2(584, 8, 32, 40), Rect2(536, 8, 32, 40)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SonicAndTails/Sonic:region_rect")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(731, 9, 24, 39), Rect2(683, 9, 24, 39), Rect2(731, 9, 24, 39), Rect2(683, 9, 24, 39)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SonicAndTails/Tails:region_rect")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Rect2(672, 200, 40, 40), Rect2(720, 200, 40, 40)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("SonicAndTails/Tails/TailsTails:region_rect")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(488, 25, 16, 22), Rect2(534, 26, 19, 21), Rect2(580, 30, 20, 18), Rect2(628, 32, 20, 16), Rect2(677, 28, 19, 20), Rect2(488, 25, 16, 22), Rect2(534, 26, 19, 21), Rect2(580, 30, 20, 18), Rect2(628, 32, 20, 16), Rect2(677, 28, 19, 20)]
+}
+
+[sub_resource type="Animation" id="2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sonic:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(731, 9, 24, 39)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Tails/TailsTails:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(488, 25, 16, 22)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Knuckles:region_rect")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(252, 17, 32, 39)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Tails:region_rect")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(676, 205, 33, 35)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Amy:region_rect")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(488, 8, 32, 40)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SonicAndTails/Sonic:region_rect")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(731, 9, 24, 39)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SonicAndTails/Tails:region_rect")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(676, 205, 33, 35)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("SonicAndTails/Tails/TailsTails:region_rect")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(488, 25, 16, 22)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wio08"]
+_data = {
+"Animate": SubResource("1"),
+"RESET": SubResource("2")
+}
+
+[node name="LevelSelect" type="Node2D"]
+script = ExtResource("1_76g2x")
+
+[node name="UI" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Back" type="ColorRect" parent="UI"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0.878431, 1)
+
+[node name="Background_Sonic2" type="Node2D" parent="UI"]
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D37" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(336, 128)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D38" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(336, 160)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D39" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(384, 160)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D40" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(288, 160)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D41" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(240, 160)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D42" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(192, 160)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D43" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(144, 160)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D44" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(96, 160)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D45" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(48, 160)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D46" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(0, 160)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D47" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(384, 128)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D48" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(288, 128)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D49" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(240, 128)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D50" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(192, 128)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D51" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(144, 128)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D52" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(96, 128)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D53" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(48, 128)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D54" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(0, 128)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D55" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(336, 192)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D56" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(336, 224)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D57" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(384, 224)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D58" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(288, 224)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D59" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(240, 224)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D60" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(192, 224)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D61" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(144, 224)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D62" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(96, 224)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D63" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(48, 224)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D64" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(0, 224)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D65" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(384, 192)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D66" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(288, 192)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D67" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(240, 192)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D68" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(192, 192)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D69" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(144, 192)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D70" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(96, 192)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D71" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(48, 192)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D72" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(0, 192)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D5" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(336, 0)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D10" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(336, 32)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D11" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(384, 32)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D12" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(288, 32)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D13" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(240, 32)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D14" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(192, 32)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D15" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(144, 32)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D16" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(96, 32)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D17" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(48, 32)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D18" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(0, 32)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D9" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(384, 0)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D6" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(288, 0)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D7" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(240, 0)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D8" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(192, 0)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D3" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(144, 0)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D4" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(96, 0)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D2" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(48, 0)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D19" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(336, 64)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D20" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(336, 96)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D21" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(384, 96)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D22" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(288, 96)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D23" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(240, 96)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D24" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(192, 96)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D25" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(144, 96)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D26" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(96, 96)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D27" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(48, 96)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D28" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(0, 96)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D29" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(384, 64)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D30" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(288, 64)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D31" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(240, 64)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D32" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(192, 64)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D33" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(144, 64)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D34" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(96, 64)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D35" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(48, 64)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sprite2D36" type="Sprite2D" parent="UI/Background_Sonic2"]
+position = Vector2(0, 64)
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Sonic2BG" type="Sprite2D" parent="UI/Background_Sonic2"]
+texture = ExtResource("5_qvw7n")
+centered = false
+hframes = 4
+
+[node name="Background_Sonic2beta" type="Container" parent="UI"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -386.0
+offset_bottom = -200.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BannerBG" type="Sprite2D" parent="UI/Background_Sonic2beta"]
+position = Vector2(205, 114)
+texture = ExtResource("3_2p68e")
+
+[node name="SonicandTailsinBanner" type="Sprite2D" parent="UI/Background_Sonic2beta"]
+position = Vector2(209, 93)
+texture = ExtResource("4_263h6")
+
+[node name="Labels" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -426.0
+offset_bottom = -240.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextTesting" type="Label" parent="UI/Labels"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 133.0
+offset_top = -15.0
+offset_right = 301.0
+offset_bottom = -7.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "LEVEL SELECT TEST"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="CharacterOrigin" type="Node2D" parent="UI/Labels"]
+visible = false
+position = Vector2(160, 97)
+
+[node name="SonicAndTails" type="Node2D" parent="UI/Labels/CharacterOrigin"]
+position = Vector2(43, 0)
+
+[node name="Sonic" type="Sprite2D" parent="UI/Labels/CharacterOrigin/SonicAndTails"]
+z_index = 3
+position = Vector2(10, 0)
+texture = ExtResource("3_xx7nf")
+region_enabled = true
+region_rect = Rect2(731, 9, 24, 39)
+
+[node name="Tails" type="Sprite2D" parent="UI/Labels/CharacterOrigin/SonicAndTails"]
+z_index = 2
+position = Vector2(-10, 0)
+texture = ExtResource("4_a6eax")
+region_enabled = true
+region_rect = Rect2(676, 205, 33, 35)
+
+[node name="TailsTails" type="Sprite2D" parent="UI/Labels/CharacterOrigin/SonicAndTails/Tails"]
+z_index = -1
+position = Vector2(-9, 7)
+texture = ExtResource("4_a6eax")
+region_enabled = true
+region_rect = Rect2(488, 25, 16, 22)
+
+[node name="Sonic" type="Sprite2D" parent="UI/Labels/CharacterOrigin"]
+visible = false
+z_index = 3
+position = Vector2(42, 0)
+texture = ExtResource("3_xx7nf")
+region_enabled = true
+region_rect = Rect2(731, 9, 24, 39)
+
+[node name="Tails" type="Sprite2D" parent="UI/Labels/CharacterOrigin"]
+visible = false
+z_index = 2
+position = Vector2(42, 0)
+texture = ExtResource("4_a6eax")
+region_enabled = true
+region_rect = Rect2(676, 205, 33, 35)
+
+[node name="TailsTails" type="Sprite2D" parent="UI/Labels/CharacterOrigin/Tails"]
+z_index = -1
+position = Vector2(-9, 7)
+texture = ExtResource("4_a6eax")
+region_enabled = true
+region_rect = Rect2(488, 25, 16, 22)
+
+[node name="Knuckles" type="Sprite2D" parent="UI/Labels/CharacterOrigin"]
+visible = false
+z_index = 3
+position = Vector2(42, 2)
+texture = ExtResource("5_b78hv")
+region_enabled = true
+region_rect = Rect2(252, 17, 32, 39)
+
+[node name="Amy" type="Sprite2D" parent="UI/Labels/CharacterOrigin"]
+visible = false
+z_index = 3
+position = Vector2(45, 3)
+texture = ExtResource("6_p26tf")
+region_enabled = true
+region_rect = Rect2(488, 8, 32, 40)
+
+[node name="CharacterAnimations" type="AnimationPlayer" parent="UI/Labels/CharacterOrigin"]
+libraries = {
+"": SubResource("AnimationLibrary_wio08")
+}
+autoplay = "Animate"
+
+[node name="Control" type="Control" parent="UI/Labels"]
+layout_mode = 1
+anchors_preset = 0
+
+[node name="Character" type="Label" parent="UI/Labels/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 222.0
+offset_top = 197.0
+offset_right = 342.0
+offset_bottom = 229.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "Sonic and Tails"
+horizontal_alignment = 1
+vertical_alignment = 2
+uppercase = true
+
+[node name="Level" type="Label" parent="UI/Labels/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 221.0
+offset_top = 166.0
+offset_right = 341.0
+offset_bottom = 192.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "Base zone act 1"
+vertical_alignment = 1
+uppercase = true
+
+[node name="DownArrow" type="Sprite2D" parent="UI/Labels/Control/Level"]
+position = Vector2(60, 20.5)
+texture = ExtResource("8_efgui")
+hframes = 2
+
+[node name="UpArrow" type="Sprite2D" parent="UI/Labels/Control/Level"]
+position = Vector2(60, 4.5)
+texture = ExtResource("8_efgui")
+hframes = 2
+frame = 1
+
+[node name="LevelSelect_Names" type="Control" parent="UI/Labels"]
+anchors_preset = 0
+
+[node name="Emerald_Hill1" type="Label" parent="UI/Labels/LevelSelect_Names"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 14.0
+offset_top = 9.0
+offset_right = 182.0
+offset_bottom = 17.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.878431, 0.878431, 0, 1)
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "Emerald Hill        1"
+vertical_alignment = 1
+uppercase = true
+
+[node name="Emerald_Hill2" type="Label" parent="UI/Labels/LevelSelect_Names"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 14.0
+offset_top = 20.0
+offset_right = 182.0
+offset_bottom = 28.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.878431, 0.878431, 0.878431, 1)
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "EMERALD HILL        2"
+horizontal_alignment = 2
+vertical_alignment = 1
+uppercase = true
+
+[node name="01_1" type="Label" parent="UI/Labels/LevelSelect_Names"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 14.0
+offset_top = 31.0
+offset_right = 182.0
+offset_bottom = 39.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "01 Zone             1"
+horizontal_alignment = 2
+vertical_alignment = 1
+uppercase = true
+
+[node name="01_2" type="Label" parent="UI/Labels/LevelSelect_Names"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 14.0
+offset_top = 42.0
+offset_right = 182.0
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "01 Zone             2"
+horizontal_alignment = 2
+vertical_alignment = 1
+uppercase = true
+
+[node name="Secret Jungle" type="Label" parent="UI/Labels/LevelSelect_Names"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 14.0
+offset_top = 53.0
+offset_right = 182.0
+offset_bottom = 61.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "Secret Jungle       1"
+vertical_alignment = 1
+uppercase = true
+
+[node name="Secret Jungle2" type="Label" parent="UI/Labels/LevelSelect_Names"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 14.0
+offset_top = 64.0
+offset_right = 182.0
+offset_bottom = 72.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "Secret Jungle       2"
+vertical_alignment = 1
+uppercase = true
+
+[node name="03" type="Label" parent="UI/Labels/LevelSelect_Names"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 14.0
+offset_top = 75.0
+offset_right = 182.0
+offset_bottom = 83.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "Sand Shower         1"
+vertical_alignment = 1
+uppercase = true
+
+[node name="04" type="Label" parent="UI/Labels/LevelSelect_Names"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 14.0
+offset_top = 86.0
+offset_right = 182.0
+offset_bottom = 94.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "Sand Shower         2"
+vertical_alignment = 1
+uppercase = true
+
+[node name="Metropolis" type="Label" parent="UI/Labels/LevelSelect_Names"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 14.0
+offset_top = 96.0
+offset_right = 182.0
+offset_bottom = 104.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "Metropolis          1"
+vertical_alignment = 1
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Metropolis2" type="Label" parent="UI/Labels/LevelSelect_Names"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 14.0
+offset_top = 107.0
+offset_right = 182.0
+offset_bottom = 115.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "Metropolis          2"
+vertical_alignment = 1
+uppercase = true
+
+[node name="Metropolis3" type="Label" parent="UI/Labels/LevelSelect_Names"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 14.0
+offset_top = 118.0
+offset_right = 182.0
+offset_bottom = 126.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "Metropolis          3"
+vertical_alignment = 1
+uppercase = true
+
+[node name="Sky_Fortress" type="Label" parent="UI/Labels/LevelSelect_Names"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 14.0
+offset_top = 129.0
+offset_right = 182.0
+offset_bottom = 137.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "Sky Fortress        1"
+vertical_alignment = 1
+uppercase = true
+
+[node name="Sky_Fortress2" type="Label" parent="UI/Labels/LevelSelect_Names"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 14.0
+offset_top = 140.0
+offset_right = 182.0
+offset_bottom = 148.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "Sky Fortress        2"
+vertical_alignment = 1
+uppercase = true
+
+[node name="Hill_Top" type="Label" parent="UI/Labels/LevelSelect_Names"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 14.0
+offset_top = 151.0
+offset_right = 182.0
+offset_bottom = 159.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "Hill Top            1"
+vertical_alignment = 1
+uppercase = true
+
+[node name="Hill_Top2" type="Label" parent="UI/Labels/LevelSelect_Names"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 14.0
+offset_top = 162.0
+offset_right = 182.0
+offset_bottom = 170.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "Hill Top            2"
+vertical_alignment = 1
+uppercase = true
+
+[node name="Hidden_Palace" type="Label" parent="UI/Labels/LevelSelect_Names"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 14.0
+offset_top = 173.0
+offset_right = 182.0
+offset_bottom = 181.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "Hidden Palace       1"
+vertical_alignment = 1
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Hidden_Palace2" type="Label" parent="UI/Labels/LevelSelect_Names"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 14.0
+offset_top = 184.0
+offset_right = 182.0
+offset_bottom = 192.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "Hidden Palace       2"
+vertical_alignment = 1
+uppercase = true
+
+[node name="09" type="Label" parent="UI/Labels/LevelSelect_Names"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 14.0
+offset_top = 195.0
+offset_right = 182.0
+offset_bottom = 203.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "09 Zone             1"
+vertical_alignment = 1
+uppercase = true
+
+[node name="10" type="Label" parent="UI/Labels/LevelSelect_Names"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 14.0
+offset_top = 206.0
+offset_right = 182.0
+offset_bottom = 214.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "09 Zone             2"
+vertical_alignment = 1
+uppercase = true
+
+[node name="Oil_Ocean" type="Label" parent="UI/Labels/LevelSelect_Names"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 14.0
+offset_top = 217.0
+offset_right = 182.0
+offset_bottom = 225.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "Oil Ocean           1"
+vertical_alignment = 1
+uppercase = true
+
+[node name="Oil_Ocean2" type="Label" parent="UI/Labels/LevelSelect_Names"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 14.0
+offset_top = 228.0
+offset_right = 182.0
+offset_bottom = 236.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "Oil Ocean           2"
+vertical_alignment = 1
+uppercase = true
+
+[node name="Mystic_Cave" type="Label" parent="UI/Labels/LevelSelect_Names"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 227.0
+offset_top = 9.0
+offset_right = 395.0
+offset_bottom = 17.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "Mystic Cave         1"
+vertical_alignment = 1
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Mystic_Cave2" type="Label" parent="UI/Labels/LevelSelect_Names"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 227.0
+offset_top = 20.0
+offset_right = 395.0
+offset_bottom = 28.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "Mystic Cave         2"
+vertical_alignment = 1
+uppercase = true
+
+[node name="Casino_Night" type="Label" parent="UI/Labels/LevelSelect_Names"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 227.0
+offset_top = 32.0
+offset_right = 395.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "Casino Night        1"
+vertical_alignment = 1
+uppercase = true
+
+[node name="Casino_Night2" type="Label" parent="UI/Labels/LevelSelect_Names"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 227.0
+offset_top = 43.0
+offset_right = 395.0
+offset_bottom = 51.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "Casino Night        2"
+vertical_alignment = 1
+uppercase = true
+
+[node name="Chemical_Plant" type="Label" parent="UI/Labels/LevelSelect_Names"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 227.0
+offset_top = 54.0
+offset_right = 395.0
+offset_bottom = 62.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "Chemical Plant      1"
+vertical_alignment = 1
+uppercase = true
+
+[node name="Chemical_Plant2" type="Label" parent="UI/Labels/LevelSelect_Names"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 227.0
+offset_top = 65.0
+offset_right = 395.0
+offset_bottom = 73.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "Chemical Plant      2"
+vertical_alignment = 1
+uppercase = true
+
+[node name="Death_Egg" type="Label" parent="UI/Labels/LevelSelect_Names"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 227.0
+offset_top = 76.0
+offset_right = 395.0
+offset_bottom = 84.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "Death Egg           1"
+vertical_alignment = 1
+uppercase = true
+
+[node name="Death_Egg2" type="Label" parent="UI/Labels/LevelSelect_Names"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 227.0
+offset_top = 87.0
+offset_right = 395.0
+offset_bottom = 95.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "Death Egg           2"
+vertical_alignment = 1
+uppercase = true
+
+[node name="Aquatic_Ruin" type="Label" parent="UI/Labels/LevelSelect_Names"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 228.0
+offset_top = 98.0
+offset_right = 396.0
+offset_bottom = 106.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "Aquatic Ruin        1"
+vertical_alignment = 1
+uppercase = true
+
+[node name="Aquatic_Ruin2" type="Label" parent="UI/Labels/LevelSelect_Names"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 228.0
+offset_top = 109.0
+offset_right = 396.0
+offset_bottom = 117.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "Aquatic Ruin        2"
+vertical_alignment = 1
+uppercase = true
+
+[node name="Sky_Chase" type="Label" parent="UI/Labels/LevelSelect_Names"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 228.0
+offset_top = 120.0
+offset_right = 396.0
+offset_bottom = 128.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "Genocide City       1"
+vertical_alignment = 1
+uppercase = true
+
+[node name="Sky_Chase2" type="Label" parent="UI/Labels/LevelSelect_Names"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 228.0
+offset_top = 131.0
+offset_right = 396.0
+offset_bottom = 139.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "Genocide City       2"
+vertical_alignment = 1
+uppercase = true
+
+[node name="Sky_Chase3" type="Label" parent="UI/Labels/LevelSelect_Names"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 228.0
+offset_top = 142.0
+offset_right = 396.0
+offset_bottom = 150.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7_ymc11")
+text = "Genocide City       3"
+vertical_alignment = 1
+uppercase = true
+
+[node name="LevelSelectIcons" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -426.0
+offset_bottom = -240.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LevelSelectIconBorder" type="Sprite2D" parent="UI/LevelSelectIcons"]
+position = Vector2(347, 201)
+texture = ExtResource("11_00fx4")
+vframes = 8
+
+[node name="LevelSelectIcon" type="Sprite2D" parent="UI/LevelSelectIcons/LevelSelectIconBorder"]
+position = Vector2(-24, 2)
+texture = ExtResource("11_00fx4")
+hframes = 4
+vframes = 17
+frame = 12
+
+[node name="Switch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_x3tof")
+bus = &"SFX"

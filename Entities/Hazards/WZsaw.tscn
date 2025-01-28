@@ -1,0 +1,100 @@
+[gd_scene load_steps=14 format=3 uid="uid://cmtpyny3sl5n3"]
+
+[ext_resource type="Script" path="res://Scripts/Objects/Hazard.gd" id="1_qfx32"]
+[ext_resource type="AudioStream" uid="uid://bbs3g7tgral72" path="res://Audio/SFX/Objects/BuzzSaw.wav" id="3_knd2d"]
+[ext_resource type="Texture2D" uid="uid://dk8an2asw03of" path="res://Graphics/Hazards/WZsawblades.png" id="3_mqp37"]
+
+[sub_resource type="CircleShape2D" id="1"]
+radius = 33.0151
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqond"]
+atlas = ExtResource("3_mqp37")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c0q03"]
+atlas = ExtResource("3_mqp37")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffbjj"]
+atlas = ExtResource("3_mqp37")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tjj2"]
+atlas = ExtResource("3_mqp37")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_804vg"]
+atlas = ExtResource("3_mqp37")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qoi1"]
+atlas = ExtResource("3_mqp37")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucaj5"]
+atlas = ExtResource("3_mqp37")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q18e5"]
+atlas = ExtResource("3_mqp37")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8snul"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uqond")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c0q03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffbjj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0tjj2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_804vg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2qoi1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucaj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q18e5")
+}],
+"loop": true,
+"name": &"fast",
+"speed": 60.0
+}]
+
+[node name="Saw" type="Area2D"]
+collision_layer = 0
+collision_mask = 4096
+script = ExtResource("1_qfx32")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+shape = SubResource("1")
+
+[node name="SawNoise" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_knd2d")
+volume_db = -10.0
+autoplay = true
+max_distance = 500.0
+bus = &"SFX"
+
+[node name="Saw" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8snul")
+autoplay = "default"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

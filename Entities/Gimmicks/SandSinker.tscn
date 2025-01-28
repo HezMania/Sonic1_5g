@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://cie52jcrva36f"]
+
+[ext_resource type="Script" path="res://Scripts/Gimmicks/SandSinker.gd" id="1_q1fcw"]
+[ext_resource type="Texture2D" uid="uid://bf6cekji71vif" path="res://Graphics/Items/MonitorIcons.png" id="2_wvryr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcdji"]
+size = Vector2(8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v3ih6"]
+size = Vector2(8, 8)
+
+[node name="SandSinker" type="Area2D"]
+collision_layer = 0
+collision_mask = 4096
+script = ExtResource("1_q1fcw")
+RollAnimation = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+modulate = Color(0.419608, 0.0627451, 0.619608, 0.172549)
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_xcdji")
+
+[node name="BoundaryVisable" type="Node2D" parent="."]
+z_index = 16
+
+[node name="Boundary_UL" type="Sprite2D" parent="BoundaryVisable"]
+position = Vector2(-16, -16)
+texture = ExtResource("2_wvryr")
+hframes = 11
+vframes = 2
+frame = 19
+
+[node name="Boundary_UR" type="Sprite2D" parent="BoundaryVisable"]
+position = Vector2(16, -16)
+texture = ExtResource("2_wvryr")
+hframes = 11
+vframes = 2
+frame = 19
+
+[node name="Boundary_BL" type="Sprite2D" parent="BoundaryVisable"]
+position = Vector2(-16, 16)
+texture = ExtResource("2_wvryr")
+hframes = 11
+vframes = 2
+frame = 19
+
+[node name="Boundary_BR" type="Sprite2D" parent="BoundaryVisable"]
+position = Vector2(16, 16)
+texture = ExtResource("2_wvryr")
+hframes = 11
+vframes = 2
+frame = 19
+
+[node name="CheckPlayer" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckPlayer"]
+visible = false
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_v3ih6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

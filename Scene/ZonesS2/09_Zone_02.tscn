@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://dupketf8svaqt"]
+
+[ext_resource type="Script" path="res://Scripts/Level/Level.gd" id="1_1ynx8"]
+[ext_resource type="PackedScene" uid="uid://c30uceea18q1w" path="res://Entities/Misc/HUD.tscn" id="2_m1xr1"]
+[ext_resource type="AudioStream" uid="uid://6gvr5ap43xm5" path="res://Audio/Soundtrack/SCZ.ogg" id="2_orvu6"]
+[ext_resource type="PackedScene" uid="uid://cioq5saowvqxj" path="res://Entities/MainObjects/Player.tscn" id="3_8dgiu"]
+[ext_resource type="PackedScene" uid="uid://dggjdwwkl527b" path="res://Entities/Items/Ring.tscn" id="4_f276h"]
+
+[node name="BaseZone" type="Node2D"]
+script = ExtResource("1_1ynx8")
+music = ExtResource("2_orvu6")
+defaultLeftBoundry = 0
+defaultTopBoundry = 0
+defaultBottomBoundry = 2048
+
+[node name="HUD" parent="." instance=ExtResource("2_m1xr1")]
+zoneName = "09"
+act = 2
+
+[node name="Player" parent="." instance=ExtResource("3_8dgiu")]
+position = Vector2(83, 748)
+
+[node name="LevelLayoutData" type="Node2D" parent="."]
+
+[node name="Rings" type="Node2D" parent="."]
+
+[node name="Ring" parent="Rings" instance=ExtResource("4_f276h")]
+position = Vector2(83, 791)

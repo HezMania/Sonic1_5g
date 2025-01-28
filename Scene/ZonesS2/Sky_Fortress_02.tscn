@@ -1,0 +1,226 @@
+[gd_scene load_steps=6 format=3 uid="uid://54kes7wo3lyj"]
+
+[ext_resource type="Script" path="res://Scripts/Level/Level.gd" id="1_cxlp7"]
+[ext_resource type="PackedScene" uid="uid://c30uceea18q1w" path="res://Entities/Misc/HUD.tscn" id="2_5ax57"]
+[ext_resource type="AudioStream" uid="uid://cmd8ox3b5sq62" path="res://Audio/Soundtrack/WFZ.ogg" id="2_wlr0h"]
+[ext_resource type="PackedScene" uid="uid://cioq5saowvqxj" path="res://Entities/MainObjects/Player.tscn" id="3_1pnsg"]
+[ext_resource type="PackedScene" uid="uid://dggjdwwkl527b" path="res://Entities/Items/Ring.tscn" id="4_4c2nu"]
+
+[node name="BaseZone" type="Node2D"]
+script = ExtResource("1_cxlp7")
+music = ExtResource("2_wlr0h")
+defaultLeftBoundry = 0
+defaultTopBoundry = 0
+defaultBottomBoundry = 2048
+
+[node name="HUD" parent="." instance=ExtResource("2_5ax57")]
+zoneName = "Sky Fortress"
+act = 2
+
+[node name="Player" parent="." instance=ExtResource("3_1pnsg")]
+position = Vector2(83, 748)
+
+[node name="LevelLayoutData" type="Node2D" parent="."]
+
+[node name="Rings" type="Node2D" parent="."]
+
+[node name="_Node2D_49516" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(65535, 0)
+
+[node name="_Node2D_54321" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(560, 112)
+
+[node name="_Node2D_54322" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(584, 112)
+
+[node name="_Node2D_54323" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(608, 112)
+
+[node name="_Node2D_54324" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(832, 32)
+
+[node name="_Node2D_54325" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(856, 32)
+
+[node name="_Node2D_54326" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(880, 32)
+
+[node name="_Node2D_54327" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(912, 128)
+
+[node name="_Node2D_54328" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(936, 128)
+
+[node name="_Node2D_54329" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(960, 128)
+
+[node name="_Node2D_54330" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(1120, 128)
+
+[node name="_Node2D_54331" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(1144, 128)
+
+[node name="_Node2D_54332" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(1168, 128)
+
+[node name="_Node2D_54333" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(1536, 112)
+
+[node name="_Node2D_54334" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(1560, 112)
+
+[node name="_Node2D_54335" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(1584, 112)
+
+[node name="_Node2D_54336" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(1600, 72)
+
+[node name="_Node2D_54337" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(1624, 72)
+
+[node name="_Node2D_54338" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(1648, 72)
+
+[node name="_Node2D_54339" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(1664, 32)
+
+[node name="_Node2D_54340" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(1688, 32)
+
+[node name="_Node2D_54341" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(1712, 32)
+
+[node name="_Node2D_54342" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(2208, 48)
+
+[node name="_Node2D_54343" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(2232, 48)
+
+[node name="_Node2D_54344" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(2256, 48)
+
+[node name="_Node2D_54345" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(2272, 128)
+
+[node name="_Node2D_54346" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(2296, 128)
+
+[node name="_Node2D_54347" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(2320, 128)
+
+[node name="_Node2D_54348" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(2640, 48)
+
+[node name="_Node2D_54349" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(2664, 48)
+
+[node name="_Node2D_54350" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(2688, 48)
+
+[node name="_Node2D_54351" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(3072, 32)
+
+[node name="_Node2D_54352" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(3096, 32)
+
+[node name="_Node2D_54353" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(3120, 32)
+
+[node name="_Node2D_54354" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(3136, 64)
+
+[node name="_Node2D_54355" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(3160, 64)
+
+[node name="_Node2D_54356" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(3184, 64)
+
+[node name="_Node2D_54357" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(3200, 96)
+
+[node name="_Node2D_54358" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(3224, 96)
+
+[node name="_Node2D_54359" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(3248, 96)
+
+[node name="_Node2D_54360" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(3264, 128)
+
+[node name="_Node2D_54361" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(3288, 128)
+
+[node name="_Node2D_54362" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(3312, 128)
+
+[node name="_Node2D_54363" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(4352, 48)
+
+[node name="_Node2D_54364" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(4376, 48)
+
+[node name="_Node2D_54365" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(4400, 48)
+
+[node name="_Node2D_54366" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(4544, 1328)
+
+[node name="_Node2D_54367" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(4568, 1328)
+
+[node name="_Node2D_54368" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(4592, 1328)
+
+[node name="_Node2D_54369" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(4616, 1328)
+
+[node name="_Node2D_54370" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(4608, 1408)
+
+[node name="_Node2D_54371" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(4632, 1408)
+
+[node name="_Node2D_54372" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(4656, 1408)
+
+[node name="_Node2D_54373" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(4680, 1408)
+
+[node name="_Node2D_54374" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(4832, 1328)
+
+[node name="_Node2D_54375" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(4856, 1328)
+
+[node name="_Node2D_54376" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(4880, 1328)
+
+[node name="_Node2D_54377" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(4904, 1328)
+
+[node name="_Node2D_54378" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(5120, 1408)
+
+[node name="_Node2D_54379" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(5144, 1408)
+
+[node name="_Node2D_54380" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(5168, 1408)
+
+[node name="_Node2D_54381" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(5192, 1408)
+
+[node name="_Node2D_54382" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(3936, 1296)
+
+[node name="_Node2D_54383" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(3936, 1320)
+
+[node name="_Node2D_54384" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(3936, 1344)
+
+[node name="_Node2D_54385" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(3936, 1368)
+
+[node name="_Node2D_54386" parent="Rings" instance=ExtResource("4_4c2nu")]
+position = Vector2(3936, 1392)

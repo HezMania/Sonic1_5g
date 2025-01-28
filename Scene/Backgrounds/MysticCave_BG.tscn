@@ -1,0 +1,303 @@
+[gd_scene load_steps=2 format=3 uid="uid://csk3ti72um45t"]
+
+[ext_resource type="Texture2D" uid="uid://c2y7nghv1sijk" path="res://Graphics/Backgrounds/MysticCave.png" id="1_pcqvw"]
+
+[node name="MysticCave_Bg" type="Node2D"]
+
+[node name="Parallax2D_01" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.5, 0.15)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Parallax2D_01"]
+texture = ExtResource("1_pcqvw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 512, 36)
+
+[node name="BackgroundPar_04" type="Sprite2D" parent="Parallax2D_01"]
+position = Vector2(0, 210)
+texture = ExtResource("1_pcqvw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 210, 512, 62)
+
+[node name="Parallax2D_02" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.45, 0.15)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Parallax2D_02"]
+position = Vector2(0, 36)
+texture = ExtResource("1_pcqvw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 36, 512, 24)
+
+[node name="BackgroundPar_03" type="Sprite2D" parent="Parallax2D_02"]
+position = Vector2(0, 176)
+texture = ExtResource("1_pcqvw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 176, 512, 34)
+
+[node name="BackgroundPar_05" type="Sprite2D" parent="Parallax2D_02"]
+position = Vector2(0, 272)
+texture = ExtResource("1_pcqvw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 272, 512, 51)
+
+[node name="BackgroundPar_12" type="Sprite2D" parent="Parallax2D_02"]
+position = Vector2(0, 452)
+texture = ExtResource("1_pcqvw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 452, 512, 23)
+
+[node name="BackgroundPar_13" type="Sprite2D" parent="Parallax2D_02"]
+position = Vector2(0, 475)
+texture = ExtResource("1_pcqvw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 475, 512, 37)
+
+[node name="Parallax2D_03" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.35, 0.15)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Parallax2D_03"]
+position = Vector2(0, 60)
+texture = ExtResource("1_pcqvw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 60, 512, 18)
+
+[node name="BackgroundPar_02" type="Sprite2D" parent="Parallax2D_03"]
+position = Vector2(0, 157)
+texture = ExtResource("1_pcqvw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 157, 512, 19)
+
+[node name="BackgroundPar_11" type="Sprite2D" parent="Parallax2D_03"]
+position = Vector2(0, 434)
+texture = ExtResource("1_pcqvw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 434, 512, 18)
+
+[node name="Parallax2D_04" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.25, 0.15)
+scroll_offset = Vector2(0, -1)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Parallax2D_04"]
+position = Vector2(0, 78)
+texture = ExtResource("1_pcqvw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 78, 512, 8)
+
+[node name="BackgroundPar_09" type="Sprite2D" parent="Parallax2D_04"]
+position = Vector2(0, 396)
+texture = ExtResource("1_pcqvw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 395, 512, 7)
+
+[node name="Parallax2D_05" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.2, 0.15)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Parallax2D_05"]
+position = Vector2(0, 85)
+texture = ExtResource("1_pcqvw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 86, 512, 6)
+
+[node name="BackgroundPar_08" type="Sprite2D" parent="Parallax2D_05"]
+position = Vector2(0, 389)
+texture = ExtResource("1_pcqvw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 389, 512, 6)
+
+[node name="Tinybits" type="Node2D" parent="."]
+
+[node name="Parallax2D_06" type="Parallax2D" parent="Tinybits"]
+scroll_scale = Vector2(0.16, 0.15)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Tinybits/Parallax2D_06"]
+position = Vector2(0, 91)
+texture = ExtResource("1_pcqvw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 92, 512, 1)
+
+[node name="Parallax2D_07" type="Parallax2D" parent="Tinybits"]
+scroll_scale = Vector2(0.15, 0.15)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Tinybits/Parallax2D_07"]
+position = Vector2(0, 92)
+texture = ExtResource("1_pcqvw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 93, 512, 1)
+
+[node name="Parallax2D_08" type="Parallax2D" parent="Tinybits"]
+scroll_scale = Vector2(0.14, 0.15)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Tinybits/Parallax2D_08"]
+position = Vector2(0, 93)
+texture = ExtResource("1_pcqvw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 94, 512, 1)
+
+[node name="Parallax2D_09" type="Parallax2D" parent="Tinybits"]
+scroll_scale = Vector2(0.13, 0.15)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Tinybits/Parallax2D_09"]
+position = Vector2(0, 94)
+texture = ExtResource("1_pcqvw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 95, 512, 1)
+
+[node name="Parallax2D_10" type="Parallax2D" parent="Tinybits"]
+scroll_scale = Vector2(0.12, 0.15)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Tinybits/Parallax2D_10"]
+position = Vector2(0, 95)
+texture = ExtResource("1_pcqvw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 96, 512, 1)
+
+[node name="Tinybits2" type="Node2D" parent="."]
+position = Vector2(0, 292)
+
+[node name="Parallax2D_06" type="Parallax2D" parent="Tinybits2"]
+scroll_scale = Vector2(0.12, 0.15)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Tinybits2/Parallax2D_06"]
+position = Vector2(0, 92)
+texture = ExtResource("1_pcqvw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 92, 512, 1)
+
+[node name="Parallax2D_07" type="Parallax2D" parent="Tinybits2"]
+scroll_scale = Vector2(0.13, 0.15)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Tinybits2/Parallax2D_07"]
+position = Vector2(0, 93)
+texture = ExtResource("1_pcqvw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 93, 512, 1)
+
+[node name="Parallax2D_08" type="Parallax2D" parent="Tinybits2"]
+scroll_scale = Vector2(0.14, 0.15)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Tinybits2/Parallax2D_08"]
+position = Vector2(0, 94)
+texture = ExtResource("1_pcqvw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 94, 512, 1)
+
+[node name="Parallax2D_09" type="Parallax2D" parent="Tinybits2"]
+scroll_scale = Vector2(0.15, 0.15)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Tinybits2/Parallax2D_09"]
+position = Vector2(0, 95)
+texture = ExtResource("1_pcqvw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 95, 512, 1)
+
+[node name="Parallax2D_10" type="Parallax2D" parent="Tinybits2"]
+scroll_scale = Vector2(0.16, 0.15)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Tinybits2/Parallax2D_10"]
+position = Vector2(0, 96)
+texture = ExtResource("1_pcqvw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 96, 512, 1)
+
+[node name="Parallax2D_06" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.1, 0.15)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Parallax2D_06"]
+position = Vector2(0, 96)
+texture = ExtResource("1_pcqvw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 96, 512, 48)
+
+[node name="BackgroundPar_07" type="Sprite2D" parent="Parallax2D_06"]
+position = Vector2(0, 336)
+texture = ExtResource("1_pcqvw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 336, 512, 48)
+
+[node name="Parallax2D_07" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.4, 0.15)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_06" type="Sprite2D" parent="Parallax2D_07"]
+position = Vector2(0, 323)
+texture = ExtResource("1_pcqvw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 323, 512, 13)
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Parallax2D_07"]
+position = Vector2(0, 144)
+texture = ExtResource("1_pcqvw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 144, 512, 13)
+
+[node name="Parallax2D_08" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.3, 0.15)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_10" type="Sprite2D" parent="Parallax2D_08"]
+position = Vector2(0, 402)
+texture = ExtResource("1_pcqvw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 402, 512, 32)

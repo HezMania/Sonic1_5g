@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://c8cofccu33c4a"
+path="res://.godot/imported/Sonic2font.fnt-a8ac4f5855744204534768a96433b04b.fontdata"
+
+[deps]
+
+source_file="res://Graphics/HUD/LevelCards/font/Sonic2font.fnt"
+dest_files=["res://.godot/imported/Sonic2font.fnt-a8ac4f5855744204534768a96433b04b.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2

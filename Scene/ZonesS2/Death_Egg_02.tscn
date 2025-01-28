@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://dlv0s5piq3rkw"]
+
+[ext_resource type="Script" path="res://Scripts/Level/Level.gd" id="1_onht5"]
+[ext_resource type="AudioStream" uid="uid://cmd8ox3b5sq62" path="res://Audio/Soundtrack/WFZ.ogg" id="2_2v87a"]
+[ext_resource type="PackedScene" uid="uid://c30uceea18q1w" path="res://Entities/Misc/HUD.tscn" id="2_oduj0"]
+[ext_resource type="PackedScene" uid="uid://cioq5saowvqxj" path="res://Entities/MainObjects/Player.tscn" id="3_n35ly"]
+[ext_resource type="PackedScene" uid="uid://dggjdwwkl527b" path="res://Entities/Items/Ring.tscn" id="4_7r3u4"]
+
+[node name="BaseZone" type="Node2D"]
+script = ExtResource("1_onht5")
+music = ExtResource("2_2v87a")
+defaultLeftBoundry = 0
+defaultTopBoundry = 0
+defaultBottomBoundry = 2048
+
+[node name="HUD" parent="." instance=ExtResource("2_oduj0")]
+zoneName = "Death Egg"
+act = 2
+
+[node name="Player" parent="." instance=ExtResource("3_n35ly")]
+position = Vector2(83, 748)
+
+[node name="LevelLayoutData" type="Node2D" parent="."]
+
+[node name="Rings" type="Node2D" parent="."]
+
+[node name="Ring" parent="Rings" instance=ExtResource("4_7r3u4")]
+position = Vector2(83, 791)

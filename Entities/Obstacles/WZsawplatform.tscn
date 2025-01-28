@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=3 uid="uid://jou648sybb8t"]
+
+[ext_resource type="Script" path="res://Scripts/Objects/Platform.gd" id="1_33rbj"]
+[ext_resource type="Texture2D" uid="uid://b1jm5wb5a20q3" path="res://Graphics/Obstacles/WZsawbase.png" id="2_8y2in"]
+[ext_resource type="Script" path="res://Scripts/Objects/PlatformChild.gd" id="2_ucfvs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4sody"]
+atlas = ExtResource("2_8y2in")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6o1we"]
+atlas = ExtResource("2_8y2in")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8d7c"]
+atlas = ExtResource("2_8y2in")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7yj5"]
+atlas = ExtResource("2_8y2in")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c7q57"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4sody")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6o1we")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8d7c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7yj5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="1"]
+resource_local_to_scene = true
+size = Vector2(80, 2)
+
+[node name="Platform" type="Node2D"]
+process_priority = 10
+script = ExtResource("1_33rbj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_c7q57")
+autoplay = "default"
+frame_progress = 0.930694
+
+[node name="Platform" type="AnimatableBody2D" parent="."]
+process_priority = 10
+collision_layer = 8193
+collision_mask = 0
+script = ExtResource("2_ucfvs")
+
+[node name="Sprite2D" type="Sprite2D" parent="Platform"]
+
+[node name="Shape3D" type="CollisionShape2D" parent="Platform"]
+modulate = Color(1, 1, 1, 0.0980392)
+position = Vector2(0, -14)
+shape = SubResource("1")
+one_way_collision = true

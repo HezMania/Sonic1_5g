@@ -1,0 +1,127 @@
+[gd_scene load_steps=12 format=3 uid="uid://cqirkj82f3a2c"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/WaspBomber.gd" id="1_r65lf"]
+[ext_resource type="Texture2D" uid="uid://c5mhr5w1s4w8y" path="res://Graphics/Enemies/buzzBomber.png" id="2_76hgt"]
+[ext_resource type="Texture2D" uid="uid://ck5tcwvxbp0c2" path="res://Graphics/Enemies/WaspBomber.png" id="3_ytxch"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xh5k"]
+atlas = ExtResource("3_ytxch")
+region = Rect2(48, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkf4h"]
+atlas = ExtResource("3_ytxch")
+region = Rect2(48, 8, 8, 8)
+
+[sub_resource type="AtlasTexture" id="6"]
+atlas = ExtResource("2_76hgt")
+region = Rect2(48, 35, 48, 35)
+
+[sub_resource type="AtlasTexture" id="4"]
+atlas = ExtResource("2_76hgt")
+region = Rect2(0, 35, 48, 35)
+
+[sub_resource type="AtlasTexture" id="5"]
+atlas = ExtResource("2_76hgt")
+region = Rect2(48, 35, 48, 35)
+
+[sub_resource type="SpriteFrames" id="7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xh5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkf4h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("6")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"fireWings",
+"speed": 60.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("4")
+}, {
+"duration": 1.0,
+"texture": SubResource("5")
+}],
+"loop": true,
+"name": &"wing",
+"speed": 60.0
+}]
+
+[sub_resource type="RectangleShape2D" id="8"]
+size = Vector2(80, 192)
+
+[node name="BuzzBomber" type="CharacterBody2D" groups=["Enemy"]]
+position = Vector2(406.4, 0)
+collision_layer = 16384
+collision_mask = 0
+script = ExtResource("1_r65lf")
+
+[node name="CollissionMask" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("1")
+
+[node name="DamageArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 528384
+
+[node name="HitBox" type="CollisionShape2D" parent="DamageArea"]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(0, -3)
+shape = SubResource("1")
+
+[node name="Sprite2D" type="Node2D" parent="."]
+
+[node name="Wings" type="AnimatedSprite2D" parent="Sprite2D"]
+visible = false
+sprite_frames = SubResource("7")
+animation = &"wing"
+autoplay = "wing"
+frame_progress = 0.24432
+
+[node name="BuzzBomber" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(0, 1)
+texture = ExtResource("3_ytxch")
+region_enabled = true
+region_rect = Rect2(0, 0, 48, 16)
+
+[node name="Fire" type="AnimatedSprite2D" parent="Sprite2D"]
+position = Vector2(8, -3)
+sprite_frames = SubResource("7")
+autoplay = "default"
+frame_progress = 0.33304
+
+[node name="PlayerCheck" type="Area2D" parent="Sprite2D"]
+z_index = -1
+collision_layer = 0
+collision_mask = 4096
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/PlayerCheck"]
+modulate = Color(1, 1, 1, 0.352941)
+position = Vector2(-40, 86)
+shape = SubResource("8")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+scale = Vector2(2.7, 2.7)
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="DamageArea" to="." method="_on_DamageArea_area_entered"]
+[connection signal="body_entered" from="DamageArea" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="DamageArea" to="." method="_on_body_exited"]
+[connection signal="body_entered" from="Sprite2D/PlayerCheck" to="." method="_on_PlayerCheck_body_entered"]

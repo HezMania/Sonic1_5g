@@ -1,0 +1,113 @@
+[gd_scene load_steps=11 format=3 uid="uid://c2cdad33tmdsa"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/Crabmeat.gd" id="1_ti0la"]
+[ext_resource type="Texture2D" uid="uid://td85ja22hmca" path="res://Graphics/Enemies/Crabmeat.png" id="2_h5ytp"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(44, 32)
+
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(40, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wbx21"]
+size = Vector2(190, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r74vb"]
+atlas = ExtResource("2_h5ytp")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3rgl"]
+atlas = ExtResource("2_h5ytp")
+region = Rect2(144, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_boegl"]
+atlas = ExtResource("2_h5ytp")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eyltc"]
+atlas = ExtResource("2_h5ytp")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v53mf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r74vb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b3rgl")
+}],
+"loop": true,
+"name": &"shooting",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r74vb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_boegl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eyltc")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 6.0
+}]
+
+[node name="Crabmeat" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 16384
+collision_mask = 15
+script = ExtResource("1_ti0la")
+
+[node name="CollissionMask" type="CollisionShape2D" parent="."]
+shape = SubResource("1")
+
+[node name="DamageArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 528384
+
+[node name="HitBox" type="CollisionShape2D" parent="DamageArea"]
+modulate = Color(1, 0, 0, 1)
+shape = SubResource("2")
+
+[node name="PlayerCheck" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4096
+
+[node name="PlayerRange" type="CollisionShape2D" parent="PlayerCheck"]
+modulate = Color(0.94677, 0.743011, 0, 1)
+shape = SubResource("RectangleShape2D_wbx21")
+
+[node name="CrabmeatBody" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_v53mf")
+animation = &"shooting"
+
+[node name="Motobug" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, 1)
+texture = ExtResource("2_h5ytp")
+hframes = 3
+vframes = 3
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+z_index = -100
+position = Vector2(3.27826e-06, -1.90735e-06)
+scale = Vector2(3.4, 3.2)
+
+[node name="FloorCheck" type="RayCast2D" parent="."]
+position = Vector2(-17, 6)
+target_position = Vector2(0, 14)
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="DamageArea" to="." method="_on_DamageArea_area_entered"]
+[connection signal="body_entered" from="DamageArea" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="DamageArea" to="." method="_on_body_exited"]
+[connection signal="body_entered" from="PlayerCheck" to="." method="_on_player_check_body_entered"]

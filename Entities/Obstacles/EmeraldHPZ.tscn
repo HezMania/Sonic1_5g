@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dod0l37ybt8kn"]
+
+[ext_resource type="Script" path="res://Scripts/Objects/Emerald.gd" id="1_hhb7s"]
+[ext_resource type="Texture2D" uid="uid://bdbgcjmbvaavr" path="res://Graphics/Obstacles/HPZEmerald.png" id="2_sgwmg"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(64, 31)
+
+[node name="Emerald" type="StaticBody2D"]
+collision_layer = 8192
+collision_mask = 0
+script = ExtResource("1_hhb7s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_sgwmg")

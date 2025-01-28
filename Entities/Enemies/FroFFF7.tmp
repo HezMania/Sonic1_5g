@@ -1,0 +1,186 @@
+[gd_scene load_steps=11 format=3 uid="uid://cfv6sj6kh3cwj"]
+
+[ext_resource type="Texture2D" uid="uid://6ka6uhaaarhx" path="res://Graphics/Enemies/froggo.png" id="2_qtem6"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(20, 42)
+
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(20, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7pxh"]
+atlas = ExtResource("2_qtem6")
+region = Rect2(0, 0, 48, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ens5"]
+atlas = ExtResource("2_qtem6")
+region = Rect2(0, 0, 48, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jnvt"]
+atlas = ExtResource("2_qtem6")
+region = Rect2(48, 0, 48, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgh18"]
+atlas = ExtResource("2_qtem6")
+region = Rect2(96, 0, 48, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1i7at"]
+atlas = ExtResource("2_qtem6")
+region = Rect2(144, 0, 48, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4ocme"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l7pxh")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ens5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jnvt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgh18")
+}],
+"loop": false,
+"name": &"falling",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgh18")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jnvt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ens5")
+}],
+"loop": true,
+"name": &"jumping",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1i7at")
+}],
+"loop": true,
+"name": &"shooting",
+"speed": 5.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_crqjx"]
+script/source = "xtends EnemyBase
+
+const GRAVITY = 600
+var direction = 1
+var state = 0
+var stateTimer = 0
+var animTime = 0
+@export var speed_normal = 60
+var speed = speed_normal
+@export var bounce = 200
+var editorOffset = 1
+@export var travelDistance = 512
+
+var Particle = preload(\"res://Entities/Misc/GenericParticle.tscn\")
+
+func _ready():
+	defaultMovement = false
+	direction = -sign(scale.x)
+
+func _physics_process(delta):
+		$Froggo.scale.x = abs($Froggo.scale.x)*-direction
+		$FloorCheck.position.x = abs($FloorCheck.position.x)*direction
+		$FloorCheck.force_raycast_update()
+	
+	# Edge check
+	#if is_on_wall() or !$FloorCheck.is_colliding():
+		#state = 1
+		if is_on_wall():
+			direction = -direction
+	
+	# Movement
+		if state == 0:
+		#this part is moving him left or right
+			velocity.x = direction*speed
+			animTime = fmod(animTime+delta*2,1)
+			stateTimer = 0
+		else: # Stationary
+			velocity.x = 0
+			animTime = 0
+			stateTimer += delta
+		
+		# state timer check, if greater then 1 go back to normal
+			if stateTimer >= 1:
+				state = 0
+				stateTimer = 0
+				direction = -direction
+	
+	# Velocity movement
+		set_velocity(velocity)
+	# TODOConverter40 looks that snap in Godot 4.0 is float, not vector like in Godot 3 - previous value `Vector2.DOWN`
+		set_up_direction(Vector2.UP)
+		move_and_slide()
+		velocity = velocity
+	
+		if velocity.y > 0:
+			$Froggo.play(\"falling\")
+	
+		# Gravity
+		if !is_on_floor():
+			velocity.y += GRAVITY*delta
+	
+		if is_on_floor():
+			velocity.y = -1*bounce
+			$Froggo.play(\"default\")
+"
+
+[node name="Froggo" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 16384
+collision_mask = 15
+velocity = Vector2(60, 125280)
+
+[node name="CollissionMask" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("1")
+
+[node name="DamageArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 528384
+
+[node name="HitBox" type="CollisionShape2D" parent="DamageArea"]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(0, 1)
+shape = SubResource("2")
+
+[node name="Froggo" type="AnimatedSprite2D" parent="."]
+scale = Vector2(-1, 1)
+sprite_frames = SubResource("SpriteFrames_4ocme")
+animation = &"shooting"
+autoplay = "default"
+flip_h = true
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+z_index = -100
+position = Vector2(2.38419e-07, -5.5)
+scale = Vector2(3.7, 2.65)
+script = SubResource("GDScript_crqjx")
+speed_normal = null
+bounce = null
+travelDistance = null
+damageType = null
+
+[node name="FloorCheck" type="RayCast2D" parent="."]
+position = Vector2(8, 20)
+target_position = Vector2(0, 14)
+
+[connection signal="area_entered" from="DamageArea" to="." method="_on_DamageArea_area_entered"]
+[connection signal="body_entered" from="DamageArea" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="DamageArea" to="." method="_on_body_exited"]

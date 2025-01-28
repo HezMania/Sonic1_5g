@@ -1,0 +1,116 @@
+[gd_scene load_steps=3 format=4 uid="uid://bar6ndomqs23c"]
+
+[ext_resource type="Texture2D" uid="uid://byx1o1k4ffym8" path="res://Graphics/Backgrounds/GenocideCity2.png" id="1_d5vbx"]
+[ext_resource type="TileSet" uid="uid://bmlpmg1i4t8kx" path="res://Tileset/Levels/GenocideCity_AnimTiles.tres" id="2_pkp2j"]
+
+[node name="GenocideCityBG" type="Node2D"]
+
+[node name="Parallax2D_01" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.25, 0.1)
+repeat_size = Vector2(512, 0)
+repeat_times = 4
+metadata/_edit_lock_ = true
+
+[node name="BackgroundPar_02" type="Sprite2D" parent="Parallax2D_01"]
+position = Vector2(0, 272)
+texture = ExtResource("1_d5vbx")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 272, 1152, 16)
+
+[node name="BackgroundPar_03" type="Sprite2D" parent="Parallax2D_01"]
+position = Vector2(0, 320)
+texture = ExtResource("1_d5vbx")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 320, 1152, 16)
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Parallax2D_01"]
+texture = ExtResource("1_d5vbx")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1152, 16)
+
+[node name="Parallax2D_05" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.3, 0.1)
+repeat_size = Vector2(512, 0)
+repeat_times = 4
+metadata/_edit_lock_ = true
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Parallax2D_05"]
+position = Vector2(0, 16)
+texture = ExtResource("1_d5vbx")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 16, 1152, 96)
+
+[node name="Parallax2D_02" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.2, 0.1)
+repeat_size = Vector2(512, 0)
+repeat_times = 4
+metadata/_edit_lock_ = true
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Parallax2D_02"]
+position = Vector2(0, 112)
+texture = ExtResource("1_d5vbx")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 112, 1152, 16)
+
+[node name="BackgroundPar_02" type="Sprite2D" parent="Parallax2D_02"]
+position = Vector2(0, 256)
+texture = ExtResource("1_d5vbx")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 256, 1152, 16)
+
+[node name="BackgroundPar_03" type="Sprite2D" parent="Parallax2D_02"]
+position = Vector2(0, 336)
+texture = ExtResource("1_d5vbx")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 336, 1152, 16)
+
+[node name="Parallax2D_03" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.1, 0.1)
+repeat_size = Vector2(512, 0)
+repeat_times = 4
+metadata/_edit_lock_ = true
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Parallax2D_03"]
+position = Vector2(0, 128)
+texture = ExtResource("1_d5vbx")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 128, 1152, 128)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Parallax2D_03"]
+tile_map_data = PackedByteArray("AAATAAkAAAAAAAAAAAATAAoAAAAAAAAAAAATAAsAAAAAAAAAAAATAAwAAAAAAAAAAAATAA0AAAAAAAAAAAATAA4AAAAAAAAAAAATAA8AAAAEAAAAAAAcAA8AAAAEAAAAAAATAAgAAAAAAAEAAAAcAAgAAAAAAAEAAAAcAAkAAAAAAAAAAAAcAAoAAAAAAAAAAAAcAAsAAAAAAAAAAAAcAAwAAAAAAAAAAAAcAA0AAAAAAAAAAAAcAA4AAAAAAAAAAAABAAwAAAAEAAEAAAA=")
+tile_set = ExtResource("2_pkp2j")
+metadata/_edit_lock_ = true
+
+[node name="Parallax2D_04" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.18, 0.1)
+repeat_size = Vector2(512, 0)
+repeat_times = 4
+metadata/_edit_lock_ = true
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Parallax2D_04"]
+position = Vector2(0, 288)
+texture = ExtResource("1_d5vbx")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 288, 1152, 32)
+
+[node name="Parallax2D_06" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.25, 0.1)
+repeat_size = Vector2(512, 0)
+repeat_times = 4
+metadata/_edit_lock_ = true
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Parallax2D_06"]
+position = Vector2(0, 352)
+texture = ExtResource("1_d5vbx")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 352, 1152, 32)

@@ -1,0 +1,97 @@
+[gd_scene load_steps=11 format=3 uid="uid://cwbuv3t5ndkr6"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/Redz.gd" id="1_bcgkh"]
+[ext_resource type="Texture2D" uid="uid://b2qm01hytxx4d" path="res://Graphics/Enemies/Motobug.png" id="2_u5c7l"]
+[ext_resource type="Texture2D" uid="uid://cvorlho8fffdn" path="res://Graphics/Enemies/Redz.png" id="2_v2rny"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(16, 27)
+
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(28, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nm0t"]
+atlas = ExtResource("2_v2rny")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5kiam"]
+atlas = ExtResource("2_v2rny")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlhkt"]
+atlas = ExtResource("2_v2rny")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_teye1"]
+atlas = ExtResource("2_v2rny")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3luhw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3nm0t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5kiam")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlhkt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_teye1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlhkt")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
+
+[node name="Redz" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 16384
+collision_mask = 15
+script = ExtResource("1_bcgkh")
+
+[node name="CollissionMask" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2.5)
+shape = SubResource("1")
+
+[node name="DamageArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 528384
+
+[node name="HitBox" type="CollisionShape2D" parent="DamageArea"]
+modulate = Color(1, 0, 0, 1)
+shape = SubResource("2")
+
+[node name="Redz" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3luhw")
+autoplay = "default"
+frame_progress = 0.730483
+
+[node name="Motobug" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, 1)
+texture = ExtResource("2_u5c7l")
+hframes = 2
+vframes = 2
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+z_index = -100
+position = Vector2(-1.90735e-06, -1.90735e-06)
+scale = Vector2(3.2, 3.2)
+
+[node name="FloorCheck" type="RayCast2D" parent="."]
+position = Vector2(-8, 14)
+target_position = Vector2(0, 14)
+
+[connection signal="area_entered" from="DamageArea" to="." method="_on_DamageArea_area_entered"]
+[connection signal="body_entered" from="DamageArea" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="DamageArea" to="." method="_on_body_exited"]

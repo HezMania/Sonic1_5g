@@ -1,0 +1,126 @@
+[gd_scene load_steps=14 format=3 uid="uid://c77uch14gxjcp"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/Froggo.gd" id="1_y7lul"]
+[ext_resource type="Texture2D" uid="uid://6ka6uhaaarhx" path="res://Graphics/Enemies/froggo.png" id="2_idhu8"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(32, 29)
+
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(32, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6jh6"]
+atlas = ExtResource("2_idhu8")
+region = Rect2(0, 0, 48, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gq8bo"]
+atlas = ExtResource("2_idhu8")
+region = Rect2(96, 0, 48, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylpdg"]
+atlas = ExtResource("2_idhu8")
+region = Rect2(48, 0, 48, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkdj2"]
+atlas = ExtResource("2_idhu8")
+region = Rect2(0, 0, 48, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7srly"]
+atlas = ExtResource("2_idhu8")
+region = Rect2(0, 0, 48, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_brhno"]
+atlas = ExtResource("2_idhu8")
+region = Rect2(48, 0, 48, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smmer"]
+atlas = ExtResource("2_idhu8")
+region = Rect2(96, 0, 48, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3cpk"]
+atlas = ExtResource("2_idhu8")
+region = Rect2(144, 0, 48, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4ocme"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6jh6")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gq8bo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylpdg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kkdj2")
+}],
+"loop": false,
+"name": &"falling",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7srly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_brhno")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smmer")
+}],
+"loop": false,
+"name": &"jumping",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3cpk")
+}],
+"loop": true,
+"name": &"shooting",
+"speed": 5.0
+}]
+
+[node name="Froggo" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 16384
+collision_mask = 15
+velocity = Vector2(-60, 120290)
+script = ExtResource("1_y7lul")
+
+[node name="CollissionMask" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5.5)
+shape = SubResource("1")
+
+[node name="DamageArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 528384
+
+[node name="HitBox" type="CollisionShape2D" parent="DamageArea"]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(0, 6.5)
+shape = SubResource("2")
+
+[node name="Froggo_body" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4ocme")
+animation = &"jumping"
+autoplay = "default"
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+z_index = -100
+position = Vector2(2.38419e-07, -5.5)
+scale = Vector2(3.7, 2.65)
+
+[node name="FloorCheck" type="RayCast2D" parent="."]
+position = Vector2(0, 20)
+target_position = Vector2(0, 14)
+
+[connection signal="area_entered" from="DamageArea" to="." method="_on_DamageArea_area_entered"]
+[connection signal="body_entered" from="DamageArea" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="DamageArea" to="." method="_on_body_exited"]

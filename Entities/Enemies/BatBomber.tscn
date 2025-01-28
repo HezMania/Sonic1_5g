@@ -1,0 +1,170 @@
+[gd_scene load_steps=18 format=3 uid="uid://dmq0wak8l6vsk"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/BatBomber.gd" id="1_oqu1l"]
+[ext_resource type="Texture2D" uid="uid://c8ufhk8nha4g8" path="res://Graphics/Enemies/BatBomber.png" id="2_wiaad"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2lif"]
+atlas = ExtResource("2_wiaad")
+region = Rect2(0, 0, 72, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jn30e"]
+atlas = ExtResource("2_wiaad")
+region = Rect2(72, 0, 72, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bj4wf"]
+atlas = ExtResource("2_wiaad")
+region = Rect2(144, 0, 72, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbd2l"]
+atlas = ExtResource("2_wiaad")
+region = Rect2(0, 32, 72, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mosfe"]
+atlas = ExtResource("2_wiaad")
+region = Rect2(72, 32, 72, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72giw"]
+atlas = ExtResource("2_wiaad")
+region = Rect2(144, 32, 72, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_et84b"]
+atlas = ExtResource("2_wiaad")
+region = Rect2(0, 64, 72, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtqaw"]
+atlas = ExtResource("2_wiaad")
+region = Rect2(72, 64, 72, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqrls"]
+atlas = ExtResource("2_wiaad")
+region = Rect2(144, 64, 72, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xoqx6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2lif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jn30e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bj4wf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbd2l")
+}],
+"loop": true,
+"name": &"Normal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mosfe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72giw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_et84b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtqaw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqrls")
+}],
+"loop": true,
+"name": &"Swooping",
+"speed": 15.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ix8pe"]
+atlas = ExtResource("2_wiaad")
+region = Rect2(0, 96, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_keamh"]
+atlas = ExtResource("2_wiaad")
+region = Rect2(8, 96, 8, 8)
+
+[sub_resource type="SpriteFrames" id="7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ix8pe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_keamh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="RectangleShape2D" id="8"]
+size = Vector2(160, 145)
+
+[node name="BatBomber" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 16384
+collision_mask = 0
+script = ExtResource("1_oqu1l")
+travelDistance = 512
+
+[node name="CollissionMask" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("1")
+
+[node name="DamageArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 528384
+
+[node name="HitBox" type="CollisionShape2D" parent="DamageArea"]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(0, -3)
+shape = SubResource("1")
+
+[node name="Sprite2D" type="Node2D" parent="."]
+
+[node name="BatBomberBody" type="AnimatedSprite2D" parent="Sprite2D"]
+sprite_frames = SubResource("SpriteFrames_xoqx6")
+animation = &"Normal"
+autoplay = "Normal"
+frame = 3
+frame_progress = 0.986448
+offset = Vector2(0, -4)
+
+[node name="BatBomberStill" type="Sprite2D" parent="Sprite2D"]
+visible = false
+position = Vector2(0, -4)
+texture = ExtResource("2_wiaad")
+region_enabled = true
+region_rect = Rect2(0, 0, 72, 32)
+
+[node name="Fire" type="AnimatedSprite2D" parent="Sprite2D"]
+position = Vector2(0, 12)
+sprite_frames = SubResource("7")
+autoplay = "default"
+frame_progress = 0.74249
+
+[node name="PlayerCheck" type="Area2D" parent="Sprite2D"]
+z_index = -1
+collision_layer = 0
+collision_mask = 4096
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/PlayerCheck"]
+modulate = Color(1, 1, 1, 0.352941)
+position = Vector2(0, 62.5)
+shape = SubResource("8")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+scale = Vector2(2.7, 2.7)
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="area_entered" from="DamageArea" to="." method="_on_DamageArea_area_entered"]
+[connection signal="body_entered" from="DamageArea" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="DamageArea" to="." method="_on_body_exited"]
+[connection signal="body_entered" from="Sprite2D/PlayerCheck" to="." method="_on_PlayerCheck_body_entered"]

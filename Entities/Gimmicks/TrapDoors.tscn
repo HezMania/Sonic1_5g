@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8r73svkbsjwa"]
+
+[ext_resource type="Script" path="res://Scripts/Objects/TrapDoors.gd" id="1_48gup"]
+[ext_resource type="Texture2D" uid="uid://bfg2jrkvpvbm" path="res://Graphics/Gimmicks/SBZtrapdoor.png" id="2_t5b72"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(64, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3yovb"]
+size = Vector2(63.75, 50.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bx65h"]
+size = Vector2(64, 54)
+
+[node name="TrapDoor" type="Node2D"]
+script = ExtResource("1_48gup")
+
+[node name="LeftDoor" type="CharacterBody2D" parent="."]
+collision_layer = 2105344
+collision_mask = 0
+
+[node name="Crusher" type="Sprite2D" parent="LeftDoor"]
+z_index = -5
+position = Vector2(-32, 0)
+texture = ExtResource("2_t5b72")
+offset = Vector2(0, -4)
+
+[node name="Collision_Player" type="CollisionShape2D" parent="LeftDoor"]
+position = Vector2(-32, -4)
+shape = SubResource("1")
+
+[node name="PlayerCheck_Top" type="Area2D" parent="."]
+z_index = -1
+collision_layer = 0
+collision_mask = 4096
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCheck_Top"]
+position = Vector2(-64, -30.75)
+scale = Vector2(2, 1)
+shape = SubResource("RectangleShape2D_3yovb")
+
+[node name="PlayerCheck_Bottom" type="Area2D" parent="."]
+z_index = -1
+collision_layer = 0
+collision_mask = 4096
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCheck_Bottom"]
+position = Vector2(-64, 33)
+scale = Vector2(2, 1)
+shape = SubResource("RectangleShape2D_bx65h")
+
+[node name="PlayerCheck" type="Area2D" parent="."]
+z_index = -1
+collision_layer = 0
+collision_mask = 4096
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCheck"]
+visible = false
+position = Vector2(-51, -8)
+shape = SubResource("RectangleShape2D_3yovb")
+
+[connection signal="body_entered" from="PlayerCheck_Top" to="." method="_on_player_check_top_body_entered"]
+[connection signal="body_exited" from="PlayerCheck_Top" to="." method="_on_player_check_top_body_exited"]
+[connection signal="body_entered" from="PlayerCheck_Bottom" to="." method="_on_player_check_bottom_body_entered"]
+[connection signal="body_exited" from="PlayerCheck_Bottom" to="." method="_on_player_check_bottom_body_exited"]

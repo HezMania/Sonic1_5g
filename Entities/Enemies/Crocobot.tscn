@@ -1,0 +1,129 @@
+[gd_scene load_steps=13 format=3 uid="uid://djd6dffav4anv"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/Crocobot.gd" id="1_aqmbg"]
+[ext_resource type="Texture2D" uid="uid://c2q1b4pvb1s6" path="res://Graphics/Enemies/Crocobot.png" id="2_qu2hl"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(52, 28)
+
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(48, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66ncy"]
+atlas = ExtResource("2_qu2hl")
+region = Rect2(0, 32, 56, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4wnm"]
+atlas = ExtResource("2_qu2hl")
+region = Rect2(56, 32, 56, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lk86l"]
+atlas = ExtResource("2_qu2hl")
+region = Rect2(112, 32, 56, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ci6x6"]
+atlas = ExtResource("2_qu2hl")
+region = Rect2(0, 0, 56, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbvyu"]
+atlas = ExtResource("2_qu2hl")
+region = Rect2(56, 0, 56, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_inppg"]
+atlas = ExtResource("2_qu2hl")
+region = Rect2(112, 0, 56, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u41ji"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66ncy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4wnm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lk86l")
+}],
+"loop": true,
+"name": &"MouthOpen",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ci6x6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbvyu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_inppg")
+}],
+"loop": true,
+"name": &"Normal",
+"speed": 11.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sh3j8"]
+size = Vector2(102, 48)
+
+[node name="Crocobot" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 16384
+collision_mask = 15
+script = ExtResource("1_aqmbg")
+
+[node name="CollissionMask" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("1")
+debug_color = Color(0.434417, 0.831226, 0.437916, 0.501961)
+
+[node name="DamageArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 528384
+
+[node name="HitBox" type="CollisionShape2D" parent="DamageArea"]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(0, 4)
+shape = SubResource("2")
+
+[node name="Crocobot" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_u41ji")
+animation = &"Normal"
+autoplay = "Normal"
+
+[node name="Motobug" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, 1)
+texture = ExtResource("2_qu2hl")
+hframes = 3
+vframes = 2
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+z_index = -100
+position = Vector2(-1.90735e-06, -1.90735e-06)
+scale = Vector2(3.2, 3.2)
+
+[node name="FloorCheck" type="RayCast2D" parent="."]
+position = Vector2(-8, 14)
+target_position = Vector2(0, 14)
+
+[node name="PlayerCheck" type="Area2D" parent="."]
+z_index = -1
+collision_layer = 0
+collision_mask = 4096
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCheck"]
+visible = false
+position = Vector2(-51, -8)
+shape = SubResource("RectangleShape2D_sh3j8")
+
+[connection signal="area_entered" from="DamageArea" to="." method="_on_DamageArea_area_entered"]
+[connection signal="body_entered" from="DamageArea" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="DamageArea" to="." method="_on_body_exited"]
+[connection signal="body_entered" from="PlayerCheck" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="PlayerCheck" to="." method="_on_area_2d_body_exited"]

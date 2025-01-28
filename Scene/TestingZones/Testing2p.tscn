@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvv4qqoqcvwf3"]
+
+[ext_resource type="PackedScene" uid="uid://b3tlbnd1b5ppb" path="res://Scene/ZonesS2/Emerald_Hill_01.tscn" id="1_u86ep"]
+
+[node name="GameSplitscreen" type="Node"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VSplitContainer" type="VSplitContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+collapsed = true
+
+[node name="ViewportContainer1" type="SubViewportContainer" parent="ColorRect/VSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.5
+
+[node name="SubViewport1" type="SubViewport" parent="ColorRect/VSplitContainer/ViewportContainer1"]
+unique_name_in_owner = true
+handle_input_locally = false
+audio_listener_enable_2d = true
+size = Vector2i(426, 124)
+render_target_update_mode = 4
+
+[node name="Emerald Hill" parent="ColorRect/VSplitContainer/ViewportContainer1/SubViewport1" instance=ExtResource("1_u86ep")]
+
+[node name="ViewportContainer2" type="SubViewportContainer" parent="ColorRect/VSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.5
+
+[node name="SubViewport2" type="SubViewport" parent="ColorRect/VSplitContainer/ViewportContainer2"]
+unique_name_in_owner = true
+handle_input_locally = false
+audio_listener_enable_2d = true
+size = Vector2i(426, 124)
+render_target_update_mode = 4
+
+[node name="Emerald Hill" parent="ColorRect/VSplitContainer/ViewportContainer2/SubViewport2" instance=ExtResource("1_u86ep")]

@@ -1,0 +1,293 @@
+[gd_scene load_steps=3 format=3 uid="uid://cr6wcsbkem122"]
+
+[ext_resource type="Texture2D" uid="uid://s36cnromckn4" path="res://Graphics/Backgrounds/EmeraldHill.png" id="1_du2ic"]
+[ext_resource type="Material" uid="uid://cc17ekf8cc15u" path="res://Shaders/LevelSpecific_Materials/CNZ_BGripple.tres" id="2_3cf4i"]
+
+[node name="EmeraldHillBg" type="Node2D"]
+
+[node name="Parallax2D_01" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.01, 0)
+repeat_size = Vector2(512, 0)
+repeat_times = 40
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Parallax2D_01"]
+texture = ExtResource("1_du2ic")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 512, 80)
+
+[node name="BackgroundPar_02" type="Sprite2D" parent="Parallax2D_01"]
+material = ExtResource("2_3cf4i")
+position = Vector2(0, 80)
+texture = ExtResource("1_du2ic")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 80, 512, 32)
+
+[node name="Parallax2D_12" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.1, 0)
+repeat_size = Vector2(512, 0)
+repeat_times = 10
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Parallax2D_12"]
+position = Vector2(0, 112)
+texture = ExtResource("1_du2ic")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 112, 512, 16)
+
+[node name="Parallax2D_13" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.2, 0)
+repeat_size = Vector2(512, 0)
+repeat_times = 10
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Parallax2D_13"]
+position = Vector2(0, 128)
+texture = ExtResource("1_du2ic")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 128, 512, 16)
+
+[node name="Grass2d_Effect" type="Node2D" parent="."]
+position = Vector2(0, -1)
+
+[node name="Parallax2D_14" type="Parallax2D" parent="Grass2d_Effect"]
+scroll_scale = Vector2(0.3, 0)
+scroll_offset = Vector2(0, 1)
+repeat_size = Vector2(512, 0)
+repeat_times = 10
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Grass2d_Effect/Parallax2D_14"]
+position = Vector2(0, 144)
+texture = ExtResource("1_du2ic")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 160, 512, 4)
+
+[node name="Parallax2D_15" type="Parallax2D" parent="Grass2d_Effect"]
+scroll_scale = Vector2(0.31, 0)
+repeat_size = Vector2(512, 0)
+repeat_times = 10
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Grass2d_Effect/Parallax2D_15"]
+position = Vector2(0, 148)
+texture = ExtResource("1_du2ic")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 164, 512, 4)
+
+[node name="Parallax2D_16" type="Parallax2D" parent="Grass2d_Effect"]
+scroll_scale = Vector2(0.32, 0)
+repeat_size = Vector2(512, 0)
+repeat_times = 10
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Grass2d_Effect/Parallax2D_16"]
+position = Vector2(0, 152)
+texture = ExtResource("1_du2ic")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 168, 512, 4)
+
+[node name="Parallax2D_17" type="Parallax2D" parent="Grass2d_Effect"]
+scroll_scale = Vector2(0.33, 0)
+repeat_size = Vector2(512, 0)
+repeat_times = 10
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Grass2d_Effect/Parallax2D_17"]
+position = Vector2(0, 156)
+texture = ExtResource("1_du2ic")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 172, 512, 4)
+
+[node name="Parallax2D_18" type="Parallax2D" parent="Grass2d_Effect"]
+scroll_scale = Vector2(0.34, 0)
+repeat_size = Vector2(512, 0)
+repeat_times = 10
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Grass2d_Effect/Parallax2D_18"]
+position = Vector2(0, 160)
+texture = ExtResource("1_du2ic")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 176, 512, 4)
+
+[node name="Parallax2D_19" type="Parallax2D" parent="Grass2d_Effect"]
+scroll_scale = Vector2(0.35, 0)
+repeat_size = Vector2(512, 0)
+repeat_times = 10
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Grass2d_Effect/Parallax2D_19"]
+position = Vector2(0, 164)
+texture = ExtResource("1_du2ic")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 180, 512, 4)
+
+[node name="Parallax2D_20" type="Parallax2D" parent="Grass2d_Effect"]
+scroll_scale = Vector2(0.36, 0)
+repeat_size = Vector2(512, 0)
+repeat_times = 10
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Grass2d_Effect/Parallax2D_20"]
+position = Vector2(0, 168)
+texture = ExtResource("1_du2ic")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 184, 512, 4)
+
+[node name="Parallax2D_21" type="Parallax2D" parent="Grass2d_Effect"]
+scroll_scale = Vector2(0.37, 0)
+repeat_size = Vector2(512, 0)
+repeat_times = 10
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Grass2d_Effect/Parallax2D_21"]
+position = Vector2(0, 172)
+texture = ExtResource("1_du2ic")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 188, 512, 4)
+
+[node name="Parallax2D_22" type="Parallax2D" parent="Grass2d_Effect"]
+scroll_scale = Vector2(0.38, 0)
+repeat_size = Vector2(512, 0)
+repeat_times = 10
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Grass2d_Effect/Parallax2D_22"]
+position = Vector2(0, 176)
+texture = ExtResource("1_du2ic")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 192, 512, 4)
+
+[node name="Parallax2D_23" type="Parallax2D" parent="Grass2d_Effect"]
+scroll_scale = Vector2(0.39, 0)
+repeat_size = Vector2(512, 0)
+repeat_times = 10
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Grass2d_Effect/Parallax2D_23"]
+position = Vector2(0, 180)
+texture = ExtResource("1_du2ic")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 196, 512, 4)
+
+[node name="Parallax2D_24" type="Parallax2D" parent="Grass2d_Effect"]
+scroll_scale = Vector2(0.4, 0)
+repeat_size = Vector2(512, 0)
+repeat_times = 10
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Grass2d_Effect/Parallax2D_24"]
+position = Vector2(0, 184)
+texture = ExtResource("1_du2ic")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 200, 512, 4)
+
+[node name="Parallax2D_25" type="Parallax2D" parent="Grass2d_Effect"]
+scroll_scale = Vector2(0.41, 0)
+repeat_size = Vector2(512, 0)
+repeat_times = 10
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Grass2d_Effect/Parallax2D_25"]
+position = Vector2(0, 188)
+texture = ExtResource("1_du2ic")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 204, 512, 4)
+
+[node name="Parallax2D_26" type="Parallax2D" parent="Grass2d_Effect"]
+scroll_scale = Vector2(0.42, 0)
+repeat_size = Vector2(512, 0)
+repeat_times = 10
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Grass2d_Effect/Parallax2D_26"]
+position = Vector2(0, 192)
+texture = ExtResource("1_du2ic")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 208, 512, 8)
+
+[node name="Parallax2D_27" type="Parallax2D" parent="Grass2d_Effect"]
+scroll_scale = Vector2(0.43, 0)
+repeat_size = Vector2(512, 0)
+repeat_times = 10
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Grass2d_Effect/Parallax2D_27"]
+position = Vector2(0, 200)
+texture = ExtResource("1_du2ic")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 216, 512, 8)
+
+[node name="Parallax2D_28" type="Parallax2D" parent="Grass2d_Effect"]
+scroll_scale = Vector2(0.44, 0)
+repeat_size = Vector2(512, 0)
+repeat_times = 10
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Grass2d_Effect/Parallax2D_28"]
+position = Vector2(0, 208)
+texture = ExtResource("1_du2ic")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 224, 512, 8)
+
+[node name="Parallax2D_29" type="Parallax2D" parent="Grass2d_Effect"]
+scroll_scale = Vector2(0.45, 0)
+repeat_size = Vector2(512, 0)
+repeat_times = 10
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Grass2d_Effect/Parallax2D_29"]
+position = Vector2(0, 216)
+texture = ExtResource("1_du2ic")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 232, 512, 8)
+
+[node name="Parallax2D_30" type="Parallax2D" parent="Grass2d_Effect"]
+scroll_scale = Vector2(0.46, 0)
+repeat_size = Vector2(512, 0)
+repeat_times = 10
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Grass2d_Effect/Parallax2D_30"]
+position = Vector2(0, 224)
+texture = ExtResource("1_du2ic")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 240, 512, 8)
+
+[node name="Parallax2D_31" type="Parallax2D" parent="Grass2d_Effect"]
+scroll_scale = Vector2(0.47, 0)
+repeat_size = Vector2(512, 0)
+repeat_times = 10
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Grass2d_Effect/Parallax2D_31"]
+position = Vector2(0, 232)
+texture = ExtResource("1_du2ic")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 248, 512, 8)
+
+[node name="Parallax2D_32" type="Parallax2D" parent="Grass2d_Effect"]
+scroll_scale = Vector2(0.48, 0)
+repeat_size = Vector2(512, 0)
+repeat_times = 10
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Grass2d_Effect/Parallax2D_32"]
+position = Vector2(0, 240)
+texture = ExtResource("1_du2ic")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 256, 512, 8)
+
+[node name="Parallax2D_33" type="Parallax2D" parent="Grass2d_Effect"]
+scroll_scale = Vector2(0.49, 0)
+repeat_size = Vector2(512, 0)
+repeat_times = 10
+
+[node name="BackgroundPar_01" type="Sprite2D" parent="Grass2d_Effect/Parallax2D_33"]
+position = Vector2(0, 248)
+texture = ExtResource("1_du2ic")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 262, 512, 8)

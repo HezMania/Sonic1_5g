@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dby2tq2gh1epm"
+path="res://.godot/imported/13 Stage Clear.ogg-01dc35e528a09f468253f4ce61e13459.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/Soundtrack/13 Stage Clear.ogg"
+dest_files=["res://.godot/imported/13 Stage Clear.ogg-01dc35e528a09f468253f4ce61e13459.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

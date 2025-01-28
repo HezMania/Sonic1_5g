@@ -1,0 +1,94 @@
+[gd_scene load_steps=12 format=3 uid="uid://bj836ueiui0tp"]
+
+[ext_resource type="Script" path="res://Scripts/Gimmicks/WZextendSaw.gd" id="1_ktrav"]
+[ext_resource type="Texture2D" uid="uid://bw3c3431dycnw" path="res://Graphics/Obstacles/WZsawpole.png" id="2_arul7"]
+[ext_resource type="Texture2D" uid="uid://b1jm5wb5a20q3" path="res://Graphics/Obstacles/WZsawbase.png" id="2_pmqli"]
+[ext_resource type="PackedScene" uid="uid://cmtpyny3sl5n3" path="res://Entities/Hazards/WZsaw.tscn" id="5_a8l86"]
+[ext_resource type="Script" path="res://Scripts/Objects/PlatformChild.gd" id="5_prwdw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_echbq"]
+resource_local_to_scene = true
+size = Vector2(48, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4sody"]
+atlas = ExtResource("2_pmqli")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6o1we"]
+atlas = ExtResource("2_pmqli")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8d7c"]
+atlas = ExtResource("2_pmqli")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7yj5"]
+atlas = ExtResource("2_pmqli")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4o7oj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4sody")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6o1we")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8d7c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7yj5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="WZExtenderSaw" type="Node2D"]
+script = ExtResource("1_ktrav")
+length = 2
+sectionnumber = 4
+
+[node name="Platform" type="AnimatableBody2D" parent="."]
+process_priority = 10
+collision_layer = 8193
+collision_mask = 0
+script = ExtResource("5_prwdw")
+
+[node name="Saw2WZ" parent="Platform" instance=ExtResource("5_a8l86")]
+position = Vector2(0, 23)
+
+[node name="MiddlePiece" type="Sprite2D" parent="Platform"]
+texture = ExtResource("2_arul7")
+centered = false
+offset = Vector2(-8, 0)
+hframes = 4
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 2.53428)
+
+[node name="Chains" type="Sprite2D" parent="Platform"]
+position = Vector2(32, 14.5343)
+texture = ExtResource("2_arul7")
+flip_h = true
+hframes = 4
+vframes = 4
+frame = 1
+region_enabled = true
+region_rect = Rect2(64, 0, 64, 128)
+
+[node name="Shape3D" type="CollisionShape2D" parent="Platform"]
+modulate = Color(1, 1, 1, 0.0980392)
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_echbq")
+one_way_collision = true
+
+[node name="SawPlatformAbove" type="AnimatedSprite2D" parent="Platform"]
+sprite_frames = SubResource("SpriteFrames_4o7oj")
+autoplay = "default"
+frame_progress = 0.414712
+
+[node name="EditorShape" type="Sprite2D" parent="Platform"]
+visible = false
+texture = ExtResource("2_pmqli")
