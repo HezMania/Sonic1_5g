@@ -1,3 +1,6 @@
+This is a personal fork from Sonic Worlds next. Please see below for the vanilla version of SonicWorldsNext.
+
+
 ***PLEASE PLEASE PLEASE! Before you submit a Pull Request to this repository, post about what you want to submit in [Discussions](https://github.com/Techokami/SonicWorldsNext/discussions) first! PLEASE!***
 
 # Sonic Worlds Next
