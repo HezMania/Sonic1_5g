@@ -1,0 +1,33 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bb12qao16l4iu"]
+
+[ext_resource type="Texture2D" uid="uid://b5gnpjmvqfsuj" path="res://Graphics/Tiles/AnimatedTiles/CNZfacetiles.png" id="1_t76rj"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mysv2"]
+texture = ExtResource("1_t76rj")
+0:2/size_in_atlas = Vector2i(2, 2)
+0:2/animation_columns = 8
+0:2/animation_speed = 10.0
+0:2/animation_frame_0/duration = 4.0
+0:2/animation_frame_1/duration = 1.0
+0:2/animation_frame_2/duration = 1.0
+0:2/animation_frame_3/duration = 1.0
+0:2/animation_frame_4/duration = 1.0
+0:2/animation_frame_5/duration = 1.0
+0:2/animation_frame_6/duration = 1.0
+0:2/animation_frame_7/duration = 1.0
+0:2/0 = 0
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/animation_columns = 8
+0:0/animation_speed = 8.0
+0:0/animation_frame_0/duration = 4.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/animation_frame_7/duration = 1.0
+0:0/0 = 0
+
+[resource]
+sources/0 = SubResource("TileSetAtlasSource_mysv2")

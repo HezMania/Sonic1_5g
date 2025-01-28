@@ -1,0 +1,21 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://cj7n17q2alv13"]
+
+[ext_resource type="Texture2D" uid="uid://d0igqi23k18bj" path="res://Graphics/Tiles/AnimatedTiles/CPZvents.png" id="1_ca5ak"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vr1ey"]
+texture = ExtResource("1_ca5ak")
+0:0/size_in_atlas = Vector2i(2, 1)
+0:0/animation_columns = 8
+0:0/animation_speed = 10.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/animation_frame_7/duration = 1.0
+0:0/0 = 0
+
+[resource]
+sources/0 = SubResource("TileSetAtlasSource_vr1ey")
