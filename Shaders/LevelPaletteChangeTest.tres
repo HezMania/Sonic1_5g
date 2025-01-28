@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cegidn67friar"]
+
+[ext_resource type="Shader" path="res://Shaders/PaletteSwapRow2.gdshader" id="1_flbxf"]
+[ext_resource type="Texture2D" uid="uid://dso6bs5ufcnov" path="res://Graphics/Palettes/TestHPZ2.png" id="2_3aitu"]
+
+[resource]
+shader = ExtResource("1_flbxf")
+shader_parameter/amount = 4.0
+shader_parameter/palRows = 5.0
+shader_parameter/row = 4.0
+shader_parameter/approximation = 0.0
+shader_parameter/paletteTexture = ExtResource("2_3aitu")

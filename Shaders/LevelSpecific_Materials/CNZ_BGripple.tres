@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cc17ekf8cc15u"]
+
+[ext_resource type="Shader" path="res://Shaders/EarthBoundShader.gdshader" id="1_kioxw"]
+
+[resource]
+shader = ExtResource("1_kioxw")
+shader_parameter/screen_height = 32.0
+shader_parameter/amplitude = 0.002
+shader_parameter/frequency = 360.0
+shader_parameter/speed = 4.0
+shader_parameter/amplitude_vertical = 0.0
+shader_parameter/frequency_vertical = 0.0
+shader_parameter/speed_vertical = 1.0
+shader_parameter/scroll_direction = Vector2(1, 0)
+shader_parameter/scrolling_speed = 0.0
+shader_parameter/enable_palette_cycling = false
+shader_parameter/palette_speed = 0.0

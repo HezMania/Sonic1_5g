@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://clrd4illkcqhx"]
+
+[ext_resource type="Shader" path="res://Shaders/PaletteSwapRow2.gdshader" id="1_mjnx4"]
+[ext_resource type="Texture2D" uid="uid://dxrinvcoh0ycd" path="res://Graphics/Palettes/MZ_Palset1.png" id="2_1b4wj"]
+
+[resource]
+shader = ExtResource("1_mjnx4")
+shader_parameter/amount = null
+shader_parameter/palRows = null
+shader_parameter/row = null
+shader_parameter/approximation = 0.0
+shader_parameter/paletteTexture = ExtResource("2_1b4wj")

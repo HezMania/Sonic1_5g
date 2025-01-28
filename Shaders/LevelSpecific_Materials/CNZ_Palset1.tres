@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://hi4qfbji84yi"]
+
+[ext_resource type="Shader" path="res://Shaders/PaletteSwapRow2.gdshader" id="1_1arrw"]
+[ext_resource type="Texture2D" uid="uid://obmie1vm08q5" path="res://Graphics/Palettes/CNZ_Palset1.png" id="2_06d1q"]
+
+[resource]
+shader = ExtResource("1_1arrw")
+shader_parameter/amount = null
+shader_parameter/palRows = null
+shader_parameter/row = null
+shader_parameter/approximation = 0.0
+shader_parameter/paletteTexture = ExtResource("2_06d1q")

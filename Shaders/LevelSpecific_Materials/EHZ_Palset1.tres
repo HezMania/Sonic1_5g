@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://br1fjy0e8se6p"]
+
+[ext_resource type="Shader" path="res://Shaders/PaletteSwapRow2.gdshader" id="1_n3msc"]
+[ext_resource type="Texture2D" uid="uid://b28nivxribijw" path="res://Graphics/Palettes/EHZwater.png" id="2_d7jb1"]
+
+[resource]
+shader = ExtResource("1_n3msc")
+shader_parameter/amount = null
+shader_parameter/palRows = null
+shader_parameter/row = null
+shader_parameter/approximation = 0.0
+shader_parameter/paletteTexture = ExtResource("2_d7jb1")

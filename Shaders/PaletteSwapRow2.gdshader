@@ -1,0 +1,36 @@
+shader_type canvas_item;
+uniform float amount : hint_range(1,255,1);
+uniform float palRows : hint_range(1,2500,1);
+uniform float row : hint_range(1,999,1);
+uniform float approximation : hint_range(0.0,5.0,0.01);
+uniform sampler2D paletteTexture : filter_nearest;
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_nearest;
+
+
+void fragment(){
+	vec4 screen = textureLod(SCREEN_TEXTURE, SCREEN_UV, 0.0);
+
+	if (row > 1.0) {
+		vec3 pal = texture(paletteTexture,UV).rgb;
+		vec3 repal = pal;
+		vec3 color = screen.rgb;
+
+		vec3 new_color = color;
+
+		for (float i = 1.0; i<=amount; i++){
+			pal = texture(paletteTexture,vec2(i/(amount+1.0),0)).rgb;
+			repal = texture(paletteTexture,vec2(i/(amount+1.0),(((row))-1.0)/(palRows-1.0))).rgb;
+
+			if (distance(pal,color) - distance(new_color, color) <= approximation) {
+				new_color = repal;
+				// set i to end loop if a match was already found
+				i = amount+1.0;
+			}
+		}
+
+		COLOR.rgb = new_color;
+		COLOR.a  = texture(TEXTURE,UV).a;
+	} else {
+	COLOR = screen.rgba;
+	}
+}
